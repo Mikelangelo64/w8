@@ -1,0 +1,134 @@
+@import './reset';
+@import './font-size';
+
+@mixin button {
+  @include reset-button;
+  position: relative;
+  z-index: 0;
+
+  display: inline-flex;
+  //max-width: px-to-rem(134);
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+
+  //border: 1px solid var(--color-theme, var(--color-highlight));
+  border-radius: px-to-rem(10);
+  overflow: hidden;
+
+  @include transition((color 0.4s, background 1s));
+  transform: translateZ(0);
+
+  text-decoration: unset;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+  color: var(--color-theme, var(--color-highlight));
+  background-color: var(--color-reverse, var(--color-black));
+  
+  @include viewport-tablet-min {
+    padding: px-to-rem(16) px-to-rem(26);
+
+    line-height: 100%;
+    font-size: px-to-rem(16);
+  }
+  
+  @include viewport-phone {
+    padding: px-to-rem(14) px-to-rem(12);
+
+    line-height: 114%;
+    font-size: px-to-rem(14);
+  }
+
+  @include hover-focus-visible {
+    @include non-mobile-device {
+      color: var(--color-white);
+      background-color: var(--color-red);
+
+      &::before {
+        transform: translate(0, 0);
+      }
+
+      svg {
+        path {
+          stroke: var(--color-white);
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    @include transition(transform 0.4s);
+    transform: translate(-100%, 0);
+    background-color: var(--color-red);
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  svg {
+    position: relative;
+    z-index: 2;
+
+    width: px-to-rem(24);
+    height: px-to-rem(24);
+
+    path {
+      @include transition(stroke 0.4s);
+      stroke: var(--color-theme, var(--color-highlight));
+    }
+  }
+
+  > * + * {
+    margin-left: px-to-rem(8);
+  }
+}
+
+@mixin button-filled {
+  --color-theme: var(--color-white);
+  --color-reverse: var(--color-red);
+  @include button;
+}
+
+@mixin button-empty {
+  --color-theme: var(--color-red);
+  --color-reverse: var(--color-white);
+  @include button;
+
+  border: 1px solid transparent;
+  //color: var(--color-white);
+  background-color: transparent;
+
+  @include hover-focus-visible {
+    @include non-mobile-device {
+      &::after {
+        border-color: transparent;
+      }
+    }
+  }
+  
+  &::after {
+    content: '';
+    @include absolute-fullsize;
+    border-radius: inherit;
+    border: 1px solid var(--color-theme);
+    @include transition(border 0.4s);
+  }
+
+  svg {
+    path {
+      stroke: var(--color-white);
+    }
+  }
+}

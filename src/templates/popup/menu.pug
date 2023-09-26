@@ -1,0 +1,44 @@
+-
+  const menuPopupList = [
+    {
+      name: 'підбір авто',
+      href: '#',
+    },
+    {
+      name: 'актуальні лоти',
+      href: '#',
+    },
+    {
+      name: 'відео відгуки',
+      href: '#',
+    },
+    {
+      name: 'наша команда',
+      href: '#',
+    },
+  ];
+
+.modal-menu__header
+  a.logo-link.modal-menu__logo.popup-open(
+    data-popup='_popup-header-modal',
+    href='#'
+  ) 
+    img(src=require('@/assets/img/logo.svg'), alt='logo', draggable='false')
+  button.popup__close
+    img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
+
+.modal-menu__main
+  nav.menu
+    ul.menu-list
+      each item in menuPopupList
+        li.menu-list__item
+          a.menu__link(
+            class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+            href=`${item.href}`,
+            data-goto=`${item.goto}`
+          ) #{ item.name }
+
+.modal-menu__footer
+  p.modal-menu__description безкоштовна <br/> консультація
+
+  a.header__call(href='tel:+380930558669') +38 093 055 86 69

@@ -1,0 +1,132 @@
+@import '../base';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+
+  // background-color: var(--color-grey);
+
+  @include viewport-tablet-min {
+    padding: px-to-rem(36) 0;
+  }
+  
+  @include viewport-phone {
+    padding: px-to-rem(12) 0;
+  }
+  
+  //.header__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  //.header__wrapper 
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(44);
+        
+        @media (min-width: 1600px) {
+          margin-left: px-to-rem(88);
+        }
+      }
+      @include viewport-phone {
+        margin-left: px-to-rem(24);
+      }
+    }
+  }
+  
+  //.header__logo 
+  &__logo {
+    flex-shrink: 0;
+  }
+  
+  //.header__buttons 
+  &__buttons {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+
+    // > * + * {
+    //   margin-left: px-to-rem(16);
+    // }
+  }
+  
+  //.header__menu 
+  &__menu {
+    @include viewport-tablet-min {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      // max-width: px-to-rem(682);
+
+      // @media (min-width: 1601px) {
+      //   max-width: px-to-rem(712);
+      // }
+    }
+
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  //.header__call 
+  &__call {
+    @include transition(color 0.3s);
+    text-decoration: unset;
+    font-weight: 700;
+    color: var(--color-red);
+
+    &.desktop {
+      @include viewport-tablet-max {
+        display: none;
+      }
+    }
+
+    &.tablet {
+      display: none;
+
+      @include viewport-tablet {
+        width: 100%;
+        max-width: px-to-rem(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-black);
+      }
+    }
+
+    @include viewport-desktop {
+      font-size: px-to-rem(24);
+      
+      @media (min-width: 1600px) {
+        font-size: px-to-rem(30);
+      }
+    }
+
+    @include viewport-tablet-max {
+      font-size: px-to-rem(30);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

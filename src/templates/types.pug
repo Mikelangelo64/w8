@@ -1,0 +1,54 @@
+-
+  const typesArray = [
+    {
+      text: 'sedan',
+      image: '@/assets/img/types-white/car-1.png'
+    },
+    {
+      text: 'wagon',
+      image: '@/assets/img/types-white/car-2.png'
+    },
+    {
+      text: 'hatchback',
+      image: '@/assets/img/types-white/car-3.png'
+    },
+    {
+      text: 'crossover',
+      image: '@/assets/img/types-white/car-4.png'
+    },
+  ];
+
+section.types
+  ._container
+    .types__wrapper
+      a.button-filled.types__button.mobile(href='#') 
+        span до наступного кроку
+
+      .types-slider.swiper
+        .swiper-wrapper
+          each item in typesArray
+            .swiper-slide
+              .types-slider__item
+                p.types-slider__text= item.text
+
+                .types-slider__img
+                  img(src=require(`${item.image}`), alt=`${item.text}`)
+
+      .types__main
+        h2.types__title
+          span який
+          span тип кузова
+          span розглядаєте?
+
+        ul.types-list
+          li
+            button.types-list__button.active Седан
+          li
+            button.types-list__button універсал
+          li
+            button.types-list__button хетчбек
+          li
+            button.types-list__button кросовер
+
+        a.button-filled.types__button.desktop(href='#') 
+          span до наступного кроку

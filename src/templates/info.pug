@@ -1,0 +1,81 @@
+-
+  const accordionList = [
+    {
+      title: 'інтереси клієнта',
+      description: 'Інтереси кліента для нас першочергові та незмінні впродовж всього шляху авто від США до України.'
+    },
+    {
+      title: 'спеціалізація',
+      description: 'Спеціалізуємось виключно на автомобільному ринку США. Ми досконально розбираємось в купівлі та доставці американських машин.'
+    },
+    {
+      title: 'Логістика',
+      description: 'Оптимізована під воєнний час логістика з США в Україну. Налагоджені шляхи через європейськи порти.'
+    },
+    {
+      title: 'система Супроводу',
+      description: 'Розвинена система супроводу клієнта. Ми знаходимо рішення 24/7.'
+    },
+    {
+      title: 'Надійність',
+      description: 'Випробувана повномасштабним вторгненням Росії в Україну.'
+    },
+  ];
+
+section.info
+  ._container
+    .info__wrapper
+      .info__main
+        .info__content
+          .info__header
+            h2.info__title 18 років
+            p.info__subtitle <span>досвіду</span> в підборі та купівлі авто в США гарантують нашу експертизу
+
+          button.info-media__content.mobile.popup-open(
+            data-popup='_popup-info-video'
+          )
+            span.info-media__label
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="99" stroke="currentColor" stroke-width="2"/>
+                <path d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+
+            span.info-media__img
+              span.info-media__img__container
+                img(
+                  src=require('@/assets/img/info.jpg'),
+                  alt='info-video-preview'
+                )
+
+          ul.info-accordion.accordion
+            each item in accordionList
+              li.accordion__item
+                button.accordion__summary
+                  span.accordion__title= item.title
+
+                  span.accordion__label
+
+                .accordion__details
+                  p.accordion__description= item.description
+
+        .info-media
+          button.info-media__content.desktop.popup-open(
+            data-popup='_popup-info-video'
+          )
+            span.info-media__label
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="99" stroke="currentColor" stroke-width="2"/>
+                <path d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+
+            span.info-media__img
+              span.info-media__img__container
+                img(
+                  src=require('@/assets/img/info.jpg'),
+                  alt='info-video-preview',
+                  loading='lazy'
+                )
+
+      .info__footer
+        a.info__button.button-empty(href='#') 
+          span безкоштовний підбір авто

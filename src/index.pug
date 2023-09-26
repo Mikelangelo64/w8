@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title W8
+
+    link(rel='stylesheet', href=require('@/styles/styles.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/banner.pug
+
+    include @/templates/types.pug
+
+    include @/templates/info.pug
+
+    include @/templates/feedback.pug
+
+    //include @/templates/contact.pug
+
+    include @/templates/feedback-bloggers.pug
+
+    include @/templates/types-dark.pug
+
+    //- include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('./index.ts')) 
