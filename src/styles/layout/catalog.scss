@@ -3,6 +3,13 @@
 .catalog {
   overflow-x: hidden;
 
+  @include viewport-tablet-min {
+    padding-bottom: px-to-rem(60);
+  }
+  @include viewport-phone {
+    padding-bottom: px-to-rem(34);
+  }
+
   //.catalog__wrapper 
   &__wrapper {
     display: flex;
@@ -143,7 +150,7 @@
     //.catalog-slider__image 
     &__image {
       background-color: var(--color-grey);
-      
+
       @include viewport-tablet-min {
         max-width: px-to-rem(408);
       }
