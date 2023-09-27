@@ -8,7 +8,11 @@
 section.contact
   .contact-bg
     .contact-bg__container
-      img(src=require('@/assets/img/contact-bg.png'), alt='contact-bg')
+      img(
+        src=require('@/assets/img/contact-bg.png'),
+        alt='contact-bg',
+        loading='lazy'
+      )
 
   ._container.contact__container
     .contact__wrapper

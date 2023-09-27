@@ -1,0 +1,155 @@
+-
+  const catalogArray = [
+    {
+      title: '2017 ford fusion se',
+      image: '@/assets/img/catalog/catalog-1.jpg',
+      list: [
+        {
+          key: 'вартість авто в США',
+          value: '$17,192',
+          isRed: 'false'
+        },
+        {
+          key: 'вартість авто під ключ',
+          value: '$6,093',
+          isRed: 'true'
+        },
+        {
+          key: 'вартість доставки в Україну',
+          value: '$3,977',
+          isRed: 'true'
+        },
+        {
+          key: 'термін доставки',
+          value: '1 місяць',
+          isRed: 'false'
+        },
+      ],
+    },
+    {
+      title: '2017 toyota camry le',
+      image: '@/assets/img/catalog/catalog-2.jpg',
+      list: [
+        {
+          key: 'вартість авто в США',
+          value: '$17,192',
+          isRed: 'false'
+        },
+        {
+          key: 'вартість авто під ключ',
+          value: '$6,093',
+          isRed: 'true'
+        },
+        {
+          key: 'вартість доставки в Україну',
+          value: '$3,977',
+          isRed: 'true'
+        },
+        {
+          key: 'термін доставки',
+          value: '1 місяць',
+          isRed: 'false'
+        },
+      ],
+    },
+    {
+      title: '2013 ford fusion se',
+      image: '@/assets/img/catalog/catalog-3.jpg',
+      list: [
+        {
+          key: 'вартість авто в США',
+          value: '$17,192',
+          isRed: 'false'
+        },
+        {
+          key: 'вартість авто під ключ',
+          value: '$6,093',
+          isRed: 'true'
+        },
+        {
+          key: 'вартість доставки в Україну',
+          value: '$3,977',
+          isRed: 'true'
+        },
+        {
+          key: 'термін доставки',
+          value: '1 місяць',
+          isRed: 'false'
+        },
+      ],
+    },
+    {
+      title: '2013 ford fusion se',
+      image: '@/assets/img/catalog/catalog-4.jpg',
+      list: [
+        {
+          key: 'вартість авто в США',
+          value: '$17,192',
+          isRed: 'false'
+        },
+        {
+          key: 'вартість авто під ключ',
+          value: '$6,093',
+          isRed: 'true'
+        },
+        {
+          key: 'вартість доставки в Україну',
+          value: '$3,977',
+          isRed: 'true'
+        },
+        {
+          key: 'термін доставки',
+          value: '1 місяць',
+          isRed: 'false'
+        },
+      ],
+    },
+  ];
+
+section.catalog
+  ._container
+    .catalog__wrapper
+      .catalog__header
+        h2.catalog__title Найвигідніші <br/>авто
+        p.catalog__subtitle які ми привезли <br/>своїм клієнтам <br/>у 2023 році
+
+      .catalog__main
+        .catalog-slider.swiper
+          .swiper-wrapper
+            each item, index in catalogArray
+              .swiper-slide
+                .catalog-slider__item
+                  h3.catalog-slider__title= item.title
+
+                  .catalog-slider__image
+                    img(
+                      src=require(`${item.image}`),
+                      alt=`${item.title}`,
+                      loading='lazy'
+                    )
+
+                  ul.catalog-slider-list
+                    each parameter in item.list
+                      li.catalog-slider-list__item
+                        p.catalog-slider-list__key= parameter.key
+
+                        p.catalog-slider-list__value(
+                          class=`${parameter.isRed === 'true' ? 'marked' : ''}`
+                        )= parameter.value
+
+                  a.catalog-slider-list__more.button-filled(href='#')
+                    span Детальніше
+
+        .catalog-slider__bottom
+          .catalog-slider-controls
+            button.catalog-slider-prev
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34.9412 17.9705H1.00004M1.00004 17.9705L17.2918 34.2622M1.00004 17.9705L17.2918 1.67872" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+            button.catalog-slider-next
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 17.9705H34.9411M34.9411 17.9705L18.6494 34.2622M34.9411 17.9705L18.6494 1.67872" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+          .catalog-slider-pagination
