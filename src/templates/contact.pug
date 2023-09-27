@@ -1,5 +1,16 @@
+-
+  const contactDescription = `
+    Або <span>залиште</span> <br/>
+    <span>свій номер</span> телефону, <br/>
+    і ми вам зателефонуємо
+  `;
+
 section.contact
-  ._container
+  .contact-bg
+    .contact-bg__container
+      img(src=require('@/assets/img/contact-bg.png'), alt='contact-bg')
+
+  ._container.contact__container
     .contact__wrapper
       .contact__content
         .contact__header
@@ -9,3 +20,20 @@ section.contact
             span на авто до 40%
 
           a.contact__link(href='tel:+380674448820') +380 (67) 444 88 20
+
+        .contact__main
+          p.contact__description!= contactDescription
+
+          form#form-contact.form.contact__form(action='post')
+            div
+              label(for='popup-telephone') 
+                //- strong Телефон
+                input#contact-telephone(
+                  type='tel',
+                  name='telephone',
+                  placeholder='+ 380 (00) 000 00 00'
+                )
+                span.wpcf7-not-valid-tip Невірний формат
+
+            p
+              button(type='submit') Відправити

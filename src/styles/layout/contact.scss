@@ -1,0 +1,229 @@
+@import '../base';
+
+.contact {
+  position: relative;
+  z-index: 0;
+
+  overflow-y: visible;
+  overflow-x: clip;
+
+  //.contact__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+
+    @include viewport-phone {
+      margin-top: px-to-rem(212);
+    }
+  }
+  
+  //.contact__wrapper 
+  // &__wrapper {
+  // }
+  
+  //.contact__content 
+  &__content {
+    width: 100%;
+    max-width: px-to-rem(796);
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(70);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(60);
+      }
+    }
+  }
+  
+  //.contact__header 
+  &__header {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(30);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(20);
+      }
+    }
+  }
+  
+  //.contact__title 
+  &__title {
+    @include text-heading-2;
+    display: block;
+    max-width: max-content;
+
+    @include viewport-phone {
+      @media (max-width: 550px) {
+        font-size: px-to-rem(36);
+      }
+      @media (max-width: 390px) {
+        font-size: px-to-rem(29);
+      }
+    }
+
+    span {
+      display: block;
+
+      &:nth-child(1) {
+        text-align: left;
+      }
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+
+      &:nth-child(3) {
+        text-align: right;
+      }
+    }
+  }
+  
+  //.contact__link 
+  &__link {
+    display: block;
+
+    @include transition(color 0.3s);
+    text-decoration: unset;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 100%;
+
+    color: var(--color-red);
+    
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-black-100);
+      }
+    }
+
+    @include viewport-desktop {
+      font-size: px-to-rem(80);
+    }
+    @include viewport-tablet {
+      font-size: px-to-rem(60);
+    }
+    @include viewport-phone {
+      font-size: px-to-rem(40);
+      
+      @media (max-width: 390px) {
+        font-size: px-to-rem(28);
+      }
+    }
+  }
+  
+  //.contact__main 
+  &__main {
+    display: flex;
+    flex-direction: column;
+    
+    @include viewport-desktop {
+      align-items: flex-end;
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(42);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(16);
+      }
+    }
+  }
+  
+  //.contact__description 
+  &__description {
+    display: block;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-grey);
+    
+    @include viewport-desktop {
+      line-height: 106%;
+      font-size: px-to-rem(30);
+    }
+    @include viewport-tablet {
+      line-height: 106%;
+      font-size: px-to-rem(24);
+    }
+    @include viewport-phone {
+      line-height: 125%;
+      font-size: px-to-rem(16);
+    }
+
+    span {
+      color: var(--color-black);
+    }
+  }
+  
+  //.contact__form 
+  &__form {
+    width: 100%;
+    border: 1px solid var(--color-black);
+    border-radius: px-to-rem(10);
+    
+    box-shadow: 0 40px 20px 0 rgba(102, 98, 85, 0.3);
+    background-color: var(--color-white);
+    
+    @include viewport-tablet-min {
+      align-self: flex-start;
+      max-width: px-to-rem(542);
+      padding: px-to-rem(52) px-to-rem(50);
+      
+      @media (min-width: 1600px) {
+        max-width: px-to-rem(742);
+      }
+    }
+    @include viewport-phone {
+      align-self: center;
+      max-width: px-to-rem(542);
+      padding: px-to-rem(40);
+    }
+  }
+  
+  //.contact-bg 
+  &-bg {
+    position: absolute;
+    z-index: 0;
+    
+    @include viewport-desktop {
+      top: px-to-rem(220);
+      left: calc(1 * (#{px-to-rem(492)} + #{var(--wrap)}));
+      width: calc(100% * (2927 / 1920));
+      
+      @media (min-width: 1921px) {
+        width: px-to-rem(2917);
+      }
+    }
+    
+    @include viewport-tablet {
+      top: px-to-rem(220);
+      left: calc(1 * (#{px-to-rem(280)} + #{var(--wrap)}));
+      width: calc(100% * (2927 / 1920));
+    }
+
+    @include viewport-phone {
+      top: 0;
+      left: px-to-rem(146);
+      width: calc(100% * (1264 / 750));
+      
+      @media (max-width: 550px) {
+        left: px-to-rem(-146);
+        width: calc(100% * (1264 / 430));
+      }
+    }
+
+    //.contact-bg__container 
+    &__container {
+      padding-top: 40.9825%;
+      //padding-top: 63.43%;
+    }
+
+    img {
+      @include absolute-fullsize;
+      object-fit: cover;
+    }
+  }
+}

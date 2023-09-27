@@ -9,14 +9,16 @@
     background-color: var(--color-black-200);
   }
 
-  @include viewport-desktop {
-    padding-top: px-to-rem(100);
-  }
-  @include viewport-tablet {
-    padding-top: px-to-rem(60);
-  }
-  @include viewport-phone {
-    padding-top: px-to-rem(20);
+  &.first {
+    @include viewport-desktop {
+      padding-top: px-to-rem(92);
+    }
+    @include viewport-tablet {
+      padding-top: px-to-rem(60);
+    }
+    @include viewport-phone {
+      padding-top: px-to-rem(20);
+    }
   }
 
   //.types__wrapper 

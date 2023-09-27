@@ -3,6 +3,24 @@
 .feedback {
   overflow: hidden;
 
+  &.feedback-customers {
+    @include viewport-tablet-min {
+      padding-bottom: px-to-rem(22);
+    }
+    @include viewport-phone {
+      padding-bottom: px-to-rem(8);
+    }
+  }
+
+  &.feedback-bloggers {
+    @include viewport-tablet-min {
+      padding-top: px-to-rem(36);
+    }
+    @include viewport-phone {
+      padding-top: px-to-rem(26);
+    }
+  }
+
   //.feedback__wrapper 
   &__wrapper {
     > * + * {
@@ -135,7 +153,7 @@
       }
     }
 
-    //.feedback-socials __link 
+    //.feedback-socials__link 
     &__link {
       display: block;
       @include transition(color, 0.3s);
@@ -144,6 +162,18 @@
       @include hover-focus-visible {
         @include non-mobile-device {
           color: var(--color-black-100);
+        }
+      }
+
+      &.medium {
+        @include viewport-phone {
+          max-width: px-to-rem(72);
+        }
+      }
+
+      &.small {
+        @include viewport-phone {
+          max-width: px-to-rem(44);
         }
       }
   
@@ -292,6 +322,12 @@
       display: flex;
       align-items: center;
 
+      @at-root .feedback.feedback-bloggers & {
+        @include viewport-phone {
+          display: none;
+        }
+      }
+
       > * + * {
         @include viewport-tablet-min {
           margin-left: px-to-rem(46);
@@ -360,6 +396,12 @@
         }
         @include viewport-phone {
           font-size: px-to-rem(40);
+        }
+      }
+
+      @at-root .feedback.feedback-bloggers & {
+        @include viewport-phone {
+          margin: 0;;
         }
       }
     }

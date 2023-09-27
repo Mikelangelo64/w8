@@ -68,7 +68,7 @@
     height: 100%;
 
     @include transition(transform 0.4s);
-    transform: translate(-100%, 0);
+    transform: translate(-110%, 0);
     background-color: var(--color-red);
   }
 
