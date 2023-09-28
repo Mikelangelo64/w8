@@ -3,18 +3,22 @@
     {
       name: 'підбір авто',
       href: '#',
+      goto: '.types'
     },
     {
       name: 'актуальні лоти',
       href: '#',
+      goto: '.catalog'
     },
     {
       name: 'відео відгуки',
       href: '#',
+      goto: '.feedback-customers'
     },
     {
       name: 'наша команда',
       href: '#',
+      goto: '.feedback-bloggers'
     },
   ];
 
@@ -22,10 +26,7 @@
 header.header
   ._container.header__container
     .header__wrapper
-      a.logo-link.header__logo.popup-open(
-        data-popup='_popup-header-modal',
-        href='#'
-      ) 
+      a.logo-link.header__logo
         img(
           src=require('@/assets/img/logo.svg'),
           alt='logo',
@@ -36,7 +37,11 @@ header.header
         ul.menu-list
           each item in menuList
             li.menu-list__item
-              a.menu__link(href=`${item.href}`) #{ item.name }
+              a.menu__link(
+                class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+                href=`${item.href}`,
+                data-goto=`${item.goto}`
+              ) #{ item.name }
 
       .header__buttons
         a.header__call.desktop(href='tel:+380674448820') +380 (67) 444 88 20
@@ -47,6 +52,5 @@ header.header
           </svg>
 
         button.menu-burger.popup-open(data-popup='_popup-menu')
-        button.menu-burger.popup-open._opened(data-popup='_popup-form')
 
   include @/layout/popup.pug

@@ -137,7 +137,10 @@ section.catalog
                           class=`${parameter.isRed === 'true' ? 'marked' : ''}`
                         )= parameter.value
 
-                  a.catalog-slider-list__more.button-filled(href='#')
+                  a.catalog-slider-list__more.button-filled.anchor(
+                    href='#',
+                    data-goto='.types.dark'
+                  )
                     span Детальніше
 
         .catalog-slider__bottom

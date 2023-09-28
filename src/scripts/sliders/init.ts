@@ -1,5 +1,6 @@
 import makeSlider from './sliderHandler';
 import Swiper from 'swiper';
+import swipeToHandler from './swipeToHandler';
 
 interface IInitializedSlider {
   name: string;
@@ -20,6 +21,7 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       container: item,
       className: 'types',
       config: {
+        effect: 'fade',
         allowTouchMove: true
         // autoplay: {
         //   delay: 6000,
@@ -28,9 +30,13 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       }
     });
 
-    if (slider) {
-      sliders.push({ name: `types-${sliderIndex}`, slider });
+    if (!slider) {
+      return;
     }
+
+    swipeToHandler(slider, item);
+
+    sliders.push({ name: `types-${sliderIndex}`, slider });
   });
 };
 

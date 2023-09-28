@@ -10,14 +10,17 @@
   <body>
     <header class="header">
       <div class="_container header__container">
-        <div class="header__wrapper"><a class="logo-link header__logo popup-open" data-popup="_popup-header-modal"
-            href="#"> <img src="assets/img/logo.svg" alt="logo" draggable="false"></a>
+        <div class="header__wrapper"><a class="logo-link header__logo"><img src="assets/img/logo.svg" alt="logo"
+              draggable="false"></a>
           <nav class="menu header__menu">
             <ul class="menu-list">
-              <li class="menu-list__item"><a class="menu__link" href="#">підбір авто</a></li>
-              <li class="menu-list__item"><a class="menu__link" href="#">актуальні лоти</a></li>
-              <li class="menu-list__item"><a class="menu__link" href="#">відео відгуки</a></li>
-              <li class="menu-list__item"><a class="menu__link" href="#">наша команда</a></li>
+              <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".types">підбір авто</a></li>
+              <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".catalog">актуальні лоти</a>
+              </li>
+              <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".feedback-customers">відео
+                  відгуки</a></li>
+              <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".feedback-bloggers">наша
+                  команда</a></li>
             </ul>
           </nav>
           <div class="header__buttons"><a class="header__call desktop" href="tel:+380674448820">+380 (67) 444 88
@@ -26,8 +29,7 @@
                 <path
                   d="M20.6789 16.704C19.2291 15.464 17.7577 14.7128 16.3257 15.951L15.4706 16.6993C14.8449 17.2425 13.6817 19.7807 9.1842 14.607C4.68766 9.43986 7.36348 8.63533 7.99006 8.0968L8.84984 7.34753C10.2744 6.10655 9.73679 4.54433 8.70936 2.93621L8.08934 1.96216C7.05722 0.35779 5.93332 -0.695869 4.50502 0.543234L3.73328 1.21758C3.10202 1.67744 1.33749 3.17223 0.909472 6.01196C0.39435 9.41925 2.01933 13.3211 5.74225 17.6022C9.4605 21.8852 13.101 24.0365 16.5495 23.9991C19.4155 23.9682 21.1463 22.4303 21.6876 21.8712L22.4622 21.1959C23.8867 19.9577 23.0016 18.6971 21.5509 17.4542L20.6789 16.704Z"
                   fill="currentColor" />
-              </svg></a><button class="menu-burger popup-open" data-popup="_popup-menu"></button><button
-              class="menu-burger popup-open _opened" data-popup="_popup-form"></button></div>
+              </svg></a><button class="menu-burger popup-open" data-popup="_popup-menu"></button></div>
         </div>
       </div>
       <div class="popup popup-video info-video__popup " data-popupname="_popup-info-video" aria-modal="true"
@@ -53,21 +55,20 @@
           <div class="popup__wrapper"><button class="popup__close hidden"><img src="assets/img/popup-close.svg"
                 alt="close"></button>
             <div class="popup__content">
-              <div class="modal-menu__header"><a class="logo-link modal-menu__logo popup-open"
-                  data-popup="_popup-header-modal" href="#"> <img src="assets/img/logo.svg" alt="logo"
-                    draggable="false"></a><button class="popup__close"><img src="assets/img/popup-close-black.svg"
-                    alt="close"></button></div>
+              <div class="modal-menu__header"><a class="logo-link modal-menu__logo" href="#"> <img
+                    src="assets/img/logo.svg" alt="logo" draggable="false"></a><button class="popup__close"><img
+                    src="assets/img/popup-close-black.svg" alt="close"></button></div>
               <div class="modal-menu__main">
                 <nav class="menu">
                   <ul class="menu-list">
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">підбір
-                        авто</a></li>
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">актуальні
+                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".types">підбір авто</a>
+                    </li>
+                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".catalog">актуальні
                         лоти</a></li>
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">відео
-                        відгуки</a></li>
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">наша
-                        команда</a></li>
+                    <li class="menu-list__item"><a class="menu__link anchor" href="#"
+                        data-goto=".feedback-customers">відео відгуки</a></li>
+                    <li class="menu-list__item"><a class="menu__link anchor" href="#"
+                        data-goto=".feedback-bloggers">наша команда</a></li>
                   </ul>
                 </nav>
               </div>
@@ -75,18 +76,6 @@
                 <p class="modal-menu__description">безкоштовна <br /> консультація</p><a class="header__call"
                   href="tel:+380930558669">+38 093 055 86 69</a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup popup-common about__popup " data-popupname="_popup-about" aria-modal="true" role="dialog">
-        <div class="popup__overlay"></div>
-        <div class="popup__additional"></div>
-        <div class="popup__scroll">
-          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
-                alt="close"></button>
-            <div class="popup__content">
-              <p>default popup</p>
             </div>
           </div>
         </div>
@@ -121,39 +110,6 @@
           </div>
         </div>
       </div>
-      <div class="popup popup-form form__popup fullscreen-phone" data-popupname="_popup-form" aria-modal="true"
-        role="dialog">
-        <div class="popup__overlay"></div>
-        <div class="popup__additional"></div>
-        <div class="popup__scroll">
-          <div class="popup__wrapper"><button class="popup__close"><img class="desktop" src="assets/img/popup-close.svg"
-                alt="close"><img class="mobile" src="assets/img/popup-close-black.svg" alt="close"></button>
-            <div class="popup__content">
-              <div class="action">
-                <p class="action__title">Отримати консультацію</p>
-                <div class="action__main">
-                  <form class="form action__form" id="form-popup" action="post">
-                    <div><label for="popup-name"> <strong>Ім’я</strong><input id="popup-name" type="text"
-                          name="name"><span class="wpcf7-not-valid-tip">Невірний формат</span></label><label
-                        for="popup-lastname"> <strong>Прізвище</strong><input id="popup-lastname" type="text"
-                          name="lastname"><span class="wpcf7-not-valid-tip">Невірний формат</span></label></div>
-                    <div><label for="popup-email"> <strong>Email</strong><input id="popup-email" type="email"
-                          name="email"><span class="wpcf7-not-valid-tip">Невірний формат</span></label><label
-                        for="popup-telephone"> <strong>Телефон</strong><input id="popup-telephone" type="tel"
-                          name="telephone"><span class="wpcf7-not-valid-tip">Невірний формат</span></label></div>
-                    <div><label for="popup-request"> <strong>Чим ми можемо допомогти</strong><textarea
-                          id="popup-request" name="request"></textarea><span class="wpcf7-not-valid-tip">Невірний
-                          формат</span></label></div>
-                    <p><button type="submit">Відправити</button><span>Натискаючи на кнопку "Відправити" ви погоджуєтесь
-                        з<a href="./document.html" target="_blank" rel="noreferrer">умовами
-                          конфіденційності</a><span>компанії Persona Patman</span></span></p>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
     <section class="banner" data-animate="clip-path">
       <div class="banner-bg">
@@ -183,9 +139,9 @@
                 </div>
               </div>
             </div>
-            <div class="banner__buttons"><a class="banner__button button-empty" href="#"> <span>Обрати бажане
-                  авто</span></a><a class="banner__button button-filled" href="#"> <span>отримати підбір авто</span></a>
-            </div>
+            <div class="banner__buttons"><a class="banner__button button-empty anchor" href="#" data-goto=".types">
+                <span>Обрати бажане авто</span></a><a class="banner__button button-filled anchor" href="#"
+                data-goto=".types"> <span>отримати підбір авто</span></a></div>
           </div>
           <div class="banner__footer">
             <ul class="socials banner__socials">
@@ -263,11 +219,11 @@
           </div>
           <div class="types__main">
             <h2 class="types__title"><span>який</span><span>тип кузова</span><span>розглядаєте?</span></h2>
-            <ul class="types-list">
-              <li><button class="types-list__button active">Седан</button></li>
-              <li><button class="types-list__button">універсал</button></li>
-              <li><button class="types-list__button">хетчбек</button></li>
-              <li><button class="types-list__button">кросовер</button></li>
+            <ul class="types-list swipe-to-container">
+              <li><button class="types-list__button swipe-to-button active">Седан</button></li>
+              <li><button class="types-list__button swipe-to-button">універсал</button></li>
+              <li><button class="types-list__button swipe-to-button">хетчбек</button></li>
+              <li><button class="types-list__button swipe-to-button">кросовер</button></li>
             </ul><a class="button-filled types__button desktop" href="#"> <span>до наступного кроку</span></a>
           </div>
         </div>
@@ -338,8 +294,8 @@
                   </svg></span><span class="info-media__img"><span class="info-media__img__container"><img
                       src="assets/img/info.jpg" alt="info-video-preview" loading="lazy"></span></span></button></div>
           </div>
-          <div class="info__footer"><a class="info__button button-empty" href="#"> <span>безкоштовний підбір
-                авто</span></a></div>
+          <div class="info__footer"><a class="info__button button-empty anchor" href="#" data-goto=".types.dark">
+              <span>безкоштовний підбір авто</span></a></div>
         </div>
       </div>
     </section>
@@ -555,11 +511,11 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
           </div>
           <div class="types__main">
             <h2 class="types__title"><span>який</span><span>тип кузова</span><span>розглядаєте?</span></h2>
-            <ul class="types-list">
-              <li><button class="types-list__button active">Седан</button></li>
-              <li><button class="types-list__button">універсал</button></li>
-              <li><button class="types-list__button">хетчбек</button></li>
-              <li><button class="types-list__button">кросовер</button></li>
+            <ul class="types-list swipe-to-container">
+              <li><button class="types-list__button swipe-to-button active">Седан</button></li>
+              <li><button class="types-list__button swipe-to-button">універсал</button></li>
+              <li><button class="types-list__button swipe-to-button">хетчбек</button></li>
+              <li><button class="types-list__button swipe-to-button">кросовер</button></li>
             </ul><a class="button-empty types__button desktop" href="#"> <span>до наступного кроку</span></a>
           </div>
         </div>
@@ -597,7 +553,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled" href="#"><span>Детальніше</span></a>
+                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
+                      data-goto=".types.dark"><span>Детальніше</span></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -622,7 +579,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled" href="#"><span>Детальніше</span></a>
+                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
+                      data-goto=".types.dark"><span>Детальніше</span></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -647,7 +605,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled" href="#"><span>Детальніше</span></a>
+                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
+                      data-goto=".types.dark"><span>Детальніше</span></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -672,7 +631,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled" href="#"><span>Детальніше</span></a>
+                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
+                      data-goto=".types.dark"><span>Детальніше</span></a>
                   </div>
                 </div>
               </div>

@@ -3,26 +3,27 @@
     {
       name: 'підбір авто',
       href: '#',
+      goto: '.types'
     },
     {
       name: 'актуальні лоти',
       href: '#',
+      goto: '.catalog'
     },
     {
       name: 'відео відгуки',
       href: '#',
+      goto: '.feedback-customers'
     },
     {
       name: 'наша команда',
       href: '#',
+      goto: '.feedback-bloggers'
     },
   ];
 
 .modal-menu__header
-  a.logo-link.modal-menu__logo.popup-open(
-    data-popup='_popup-header-modal',
-    href='#'
-  ) 
+  a.logo-link.modal-menu__logo(href='#') 
     img(src=require('@/assets/img/logo.svg'), alt='logo', draggable='false')
   button.popup__close
     img(src=require('@/assets/img/popup-close-black.svg'), alt='close')

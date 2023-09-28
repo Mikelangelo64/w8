@@ -1,4 +1,6 @@
 import accordionInit from './accordion/init';
+import anchorsInit from './anchor/init';
+import { scrollBannerHandler } from './anchor/scroll';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
@@ -34,6 +36,9 @@ export const init = () => {
   // }
 
   const popups = initPopups();
+
+  anchorsInit(0, popups);
+  scrollBannerHandler(0);
 
   const formArr = document.querySelectorAll('form');
   const hasError = false;

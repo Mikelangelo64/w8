@@ -229,7 +229,7 @@
     &-info {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(px-to-rem(170), 1fr));
-      gap: px-to-rem(8) px-to-rem(30);
+      gap: px-to-rem(12) px-to-rem(30);
 
       @include viewport-desktop {
         @media (min-width: 1700px) {

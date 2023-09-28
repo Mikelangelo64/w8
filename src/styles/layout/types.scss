@@ -103,6 +103,15 @@
       position: relative;
       z-index: 0;
       //height: auto;
+
+      @include transition(opacity 0.4s);
+      pointer-events: none;
+      opacity: 0;
+
+      @at-root .swiper-slide.swiper-slide-active & {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
 
     //.types-slider__text 

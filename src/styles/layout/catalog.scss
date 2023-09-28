@@ -149,6 +149,8 @@
     
     //.catalog-slider__image 
     &__image {
+      display: flex;
+      min-height: px-to-rem(100);
       background-color: var(--color-grey);
 
       @include viewport-tablet-min {
