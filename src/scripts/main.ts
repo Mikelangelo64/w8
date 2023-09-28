@@ -1,3 +1,4 @@
+import accordionInit from './accordion/init';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
@@ -7,6 +8,7 @@ export const init = () => {
   scrollBarInit();
   slidersInit();
   typesTextHelper();
+  accordionInit();
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
   // let isScrolled = false;

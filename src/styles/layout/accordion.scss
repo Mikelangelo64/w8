@@ -23,6 +23,12 @@
     text-align: left;
     color: inherit;
 
+    @at-root .accordion.footer-accordion & {
+      @include viewport-tablet-min {
+        flex-direction: row-reverse;
+      }
+    }
+
     > * + * {
       margin-left: px-to-rem(24);
     }
@@ -39,6 +45,10 @@
     }
     @include viewport-phone {
       font-size: px-to-rem(24);
+    }
+
+    @at-root .accordion.footer-accordion & {
+      font-size: inherit;
     }
   }
   
@@ -92,6 +102,15 @@
 
       @at-root .accordion__item._active .accordion__label::after {
         transform: translate(-50%, -50%);
+      }
+    }
+
+    @at-root .accordion.footer-accordion & {
+      @include viewport-tablet-min {
+        max-width: px-to-rem(18);
+        height: px-to-rem(18);
+        margin-left: unset;
+        margin-right: px-to-rem(12);
       }
     }
   }

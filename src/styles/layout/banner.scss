@@ -345,8 +345,9 @@
   }
   
   //.banner__socials 
-  // &__socials {
-  // }
+  &__socials {
+    max-width: px-to-rem(188);
+  }
 
   //.banner-bg 
   &-bg {
