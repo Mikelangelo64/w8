@@ -21,11 +21,7 @@ const renderModalAnimation = ({
     const element = parent;
     element.style.display = `${progress > 0 ? 'flex' : 'none'}`;
 
-    if (parent.classList.contains('popup-header-modal')) {
-      element.style.opacity = `${progress}`;
-    } else {
-      element.style.opacity = `${progress > 0 ? 1 : 0}`;
-    }
+    element.style.opacity = `${progress > 0 ? 1 : 0}`;
   }
 
   if (overlay) {
@@ -42,8 +38,6 @@ const renderModalAnimation = ({
 
     if (parent.classList.contains('popup-menu')) {
       element.style.transform = `translateX(${(1 - easing) * 100}%)`;
-    } else if (parent.classList.contains('popup-header-modal')) {
-      element.style.transform = `translateY(${(easing - 1) * 2}rem)`;
     } else {
       element.style.transform = `translateY(${(1 - easing) * 2}rem)`;
     }

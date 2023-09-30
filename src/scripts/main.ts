@@ -71,6 +71,11 @@ export const init = () => {
             timeline?.play();
           } else {
             timeline?.reverse();
+
+            setTimeout(() => {
+              document.querySelector('html')?.classList.add('lock');
+              document.querySelector('body')?.classList.add('lock');
+            }, 300);
           }
         });
       });
