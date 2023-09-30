@@ -1,0 +1,222 @@
+@import '../base';
+
+.thanks-popup {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-height: calc(100 * var(--vh) - 0.1px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include viewport-desktop {
+    padding: px-to-rem(56) var(--wrap) px-to-rem(190);
+  }
+        
+  @include viewport-tablet {
+    padding: px-to-rem(40) var(--wrap);
+  }
+
+  @include viewport-phone {
+    padding: px-to-rem(34) var(--wrap);
+  }
+
+  //.thanks-popup-bg 
+  &-bg {
+    @include absolute-fullsize;
+    z-index: 0;
+    overflow: hidden;
+    transform: translateZ(0);
+
+    //.thanks-popup-bg__back 
+    &__back {
+      z-index: 0;
+
+      @include viewport-tablet-min {
+        @include absolute-fullsize;
+
+        transform: translate(0, 14%);
+      }
+
+      @include viewport-phone {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        //width: calc(100% * 1.7976);
+        width: 100%;
+        transform: translate(-50%, 0);
+      }
+
+      //.thanks-popup-bg__back__container 
+      &__container {
+        @include viewport-phone {
+          padding-top: px-to-rem(492);
+        }
+      }
+
+      img {
+        @include absolute-fullsize;
+        object-fit: cover;
+
+        &.desktop {
+          @include viewport-phone {
+            @media (max-width: 530px) {
+              display: none;
+            }
+          }
+        }
+
+        &.mobile {
+          @include viewport-tablet-min {
+            display: none;
+          }
+
+          @include viewport-phone {
+            display: none;
+
+            @media (max-width: 530px) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    
+    //.thanks-popup-bg__img 
+    &__img {
+      position: absolute;
+      z-index: 1;
+
+      bottom: 0;
+      left: 50%;
+      
+      @include viewport-desktop {
+        width: px-to-rem(1390);
+        transform: translate(-50%, 24%);
+        
+        @media(min-width: 1700px) {
+          transform: translate(-50%, 14%);
+        }
+      }
+      
+      @include viewport-tablet {
+        width: px-to-rem(1086);
+        transform: translate(-50%, 24%);
+      }
+      
+      @include viewport-phone {
+        width: px-to-rem(625);
+        transform: translate(-30%, -50%);
+        
+        @media (max-width: 550px) {
+          transform: translate(-14%, -50%);
+        }
+      }
+
+      //.thanks-popup-bg__img__container 
+      &__container {
+        padding-top: 38.92%;
+      }
+
+      img {
+        @include absolute-fullsize;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  //.thanks-popup__content 
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    
+    @include viewport-desktop {
+      max-width: px-to-rem(780);
+      margin-left: auto;
+      margin-right: 0;
+      
+      @media (min-width: 1600px) {
+        max-width: px-to-rem(1004);
+      }
+    }
+    
+    @include viewport-tablet {
+      max-width: px-to-rem(490);
+      margin-left: auto;
+      margin-right: 0;
+    }
+    
+    @include viewport-phone {
+      max-width: px-to-rem(540);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    > * + * {
+      @include viewport-desktop {
+        margin-top: px-to-rem(140);
+
+        @media (min-width: 1600px) {
+          margin-top: px-to-rem(200);
+        }
+      }
+      @include viewport-tablet {
+        margin-top: px-to-rem(80);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(320);
+      }
+    }
+  }
+  
+  //.thanks-popup__title 
+  &__title {
+    @include text-heading-2-special;
+
+    display: block;
+    width: 100%;
+    
+    @include viewport-phone {
+      text-align: center;
+    }
+
+    span {
+      display: block;
+
+      &:nth-child(1) {
+        @include viewport-tablet-min {
+          text-align: left;
+        }
+      }
+
+      &:nth-child(2) {
+        @include viewport-tablet-min {
+          text-align: left;
+        }
+      }
+
+      &:nth-child(3) {
+        @include viewport-tablet-min {
+          text-align: right;
+        }
+      }
+    }
+  }
+  
+  //.thanks-popup__button 
+  &__button {
+    @include viewport-desktop {
+      margin-left: px-to-rem(334);
+    }
+    @include viewport-tablet {
+      margin-left: px-to-rem(160);
+    }
+  }
+}

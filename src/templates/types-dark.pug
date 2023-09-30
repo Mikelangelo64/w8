@@ -21,10 +21,12 @@
 section.types.dark
   ._container
     .types__wrapper
-      a.button-filled.types__button.mobile(href='#') 
+      button.button-filled.types__button.mobile.popup-open(
+        data-popup='_popup-form'
+      )
         span до наступного кроку
 
-      .types-slider.swiper
+      .types-slider.resize-text-container.swiper
         .swiper-wrapper
           each item in typesDarkArray
             .swiper-slide
@@ -50,5 +52,7 @@ section.types.dark
           li
             button.types-list__button.swipe-to-button кросовер
 
-        a.button-empty.types__button.desktop(href='#') 
+        button.button-empty.types__button.desktop.popup-open(
+          data-popup='_popup-form'
+        )
           span до наступного кроку

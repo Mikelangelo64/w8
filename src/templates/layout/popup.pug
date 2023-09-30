@@ -11,6 +11,7 @@
       video: '',
       title: '',
       subtitle: '',
+      isFullscreen: 'false',
       isFullscreenPhone: 'false'
     }, 
     //- { 
@@ -23,25 +24,28 @@
       name: 'thanks', 
       type: 'feedback', 
       video: '',
+      isFullscreen: 'true',
       isFullscreenPhone: 'false'
     },
     { 
       name: 'error', 
       type: 'feedback', 
       video: '',
+      isFullscreen: 'false',
       isFullscreenPhone: 'false'
     },
-    //- { 
-    //-   name: 'form', 
-    //-   type: 'form', 
-    //-   video: '',
-    //-   isFullscreenPhone: 'true'
-    //- }
+    { 
+      name: 'form', 
+      type: 'form', 
+      video: '',
+      isFullscreen: 'true',
+      isFullscreenPhone: 'false'
+    },
   ];
 
 each item in popupList
   div(
-    class=`popup popup-${item.type} ${item.name}__popup ${item.isFullscreenPhone === 'true' ? 'fullscreen-phone': ''}`,
+    class=`popup popup-${item.type} ${item.name}__popup ${item.isFullscreenPhone === 'true' ? 'fullscreen-phone': ''} ${item.isFullscreen === 'true' ? 'fullscreen': ''} `,
     data-popupname=`_popup-${item.name}`,
     aria-modal='true',
     role='dialog'
@@ -51,7 +55,9 @@ each item in popupList
 
     .popup__scroll
       .popup__wrapper
-        button.popup__close(class=`${item.type === 'menu' ? 'hidden' : ''}`)
+        button.popup__close(
+          class=`${item.type === 'menu' || item.isFullscreen === 'true' ? 'hidden' : ''}`
+        )
           img(
             class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
             src=require('@/assets/img/popup-close.svg'),

@@ -4,12 +4,13 @@ import { scrollBannerHandler } from './anchor/scroll';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
-import typesTextHelper from './typesTextHelper';
+import initStepForm from './stepForm/init';
+import resizeTextHelper from './resizeTextHelper';
 
 export const init = () => {
   scrollBarInit();
-  slidersInit();
-  typesTextHelper();
+  const sliders = slidersInit();
+  resizeTextHelper(['.types', '.popup-form']);
   accordionInit();
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
@@ -39,6 +40,7 @@ export const init = () => {
 
   anchorsInit(0, popups);
   scrollBannerHandler(0);
+  initStepForm(sliders, popups);
 
   const formArr = document.querySelectorAll('form');
   const hasError = false;
@@ -60,6 +62,8 @@ export const init = () => {
             if (inputs.length !== 0) {
               inputs.forEach((inputProp) => {
                 const input = inputProp;
+                // console.log(input, input.value);
+
                 input.value = '';
               });
             }

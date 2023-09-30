@@ -1,6 +1,11 @@
 @import '../base';
 
 .popup {
+  &.popup-form {
+    display: flex;
+    opacity: 0;
+  }
+
   &.popup-menu {
     --wrapper-width: 100%;
   }
@@ -13,6 +18,9 @@
       @include viewport-phone {
         background-color: var(--color-white);
       }
+    }
+    @at-root .popup.fullscreen & {
+      background-color: var(--color-white);
     }
   }
 
@@ -45,7 +53,7 @@
       background-color: transparent;
     }
 
-    @at-root .popup.popup-feedback & {  
+    @at-root .popup.error__popup & {  
       @include viewport-tablet-min {
         max-width: px-to-rem(400);
         padding: px-to-rem(40) px-to-rem(32);
@@ -61,18 +69,6 @@
       background-color: var(--color-white);
     }
 
-    @at-root .popup.popup-header-modal & {
-      margin: 0 auto;
-
-      padding-left: var(--wrap);
-      padding-right: var(--wrap);
-      padding-top: px-to-rem(96);
-      padding-bottom: 0;
-
-      background-color: var(--color-black-100);
-      //background-color: red;
-    }
-
     @at-root .popup.fullscreen-phone & {
       @include viewport-phone {
         max-width: unset;
@@ -80,6 +76,14 @@
         margin: 0;
         border-radius: 0;
       }
+    }
+
+    @at-root .popup.fullscreen & {
+      max-width: unset;
+      min-height: calc(100 * var(--vh) - 0.1px);
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
     }
   }
   
@@ -121,6 +125,11 @@
     }
 
     @at-root .popup.popup-video & {
+      max-width: unset;
+      margin: 0 auto;
+    }
+
+    @at-root .popup.fullscreen & {
       max-width: unset;
       margin: 0 auto;
     }

@@ -1,5 +1,22 @@
-.feedback-popup
-  .feedback-popup__label
-    img(src=require('@/assets/img/success.svg'), alt='success')
+.thanks-popup
+  .thanks-popup-bg
+    .thanks-popup-bg__back
+      .thanks-popup-bg__back__container
+        img.desktop(src=require('@/assets/img/popup/thanks-bg.png'), alt='bg')
+        img.mobile(
+          src=require('@/assets/img/popup/thanks-bg-mobile.png'),
+          alt='bg'
+        )
 
-  p.feedback-popup__title Дякуємо! Форму успішно відправлено.
+    .thanks-popup-bg__img
+      .thanks-popup-bg__img__container
+        img(src=require('@/assets/img/popup/thanks-car.png'), alt='bg')
+
+  .thanks-popup__content
+    .thanks-popup__title
+      span Дякуюємо!
+      span Очікуйте на дзвінок експерта компанії
+      span W8 Shipping!
+
+    button.thanks-popup__button.button-filled.popup__button
+      span Зв'яжіться зі мною

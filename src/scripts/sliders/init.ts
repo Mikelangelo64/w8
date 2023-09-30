@@ -1,11 +1,47 @@
 import makeSlider from './sliderHandler';
 import Swiper from 'swiper';
-import swipeToHandler from './swipeToHandler';
+import { swipeToAllHandler } from './swipeToHandler';
 
-interface IInitializedSlider {
+export interface ITypesSlider {
+  item: HTMLElement;
+  slider: Swiper;
+}
+
+export interface IInitializedSlider {
   name: string;
   slider: Swiper | undefined;
 }
+
+const sliderActionFormInit = (sliders: Array<IInitializedSlider>) => {
+  const containerArray = document.querySelectorAll(
+    '.action-popup'
+  ) as NodeListOf<HTMLElement>;
+
+  if (containerArray.length === 0) {
+    return;
+  }
+
+  containerArray.forEach((item, sliderIndex) => {
+    const slider = makeSlider({
+      container: item,
+      className: 'action-popup',
+      config: {
+        effect: 'fade',
+        allowTouchMove: true
+        // autoplay: {
+        //   delay: 6000,
+        //   disableOnInteraction: false
+        // }
+      }
+    });
+
+    if (!slider) {
+      return;
+    }
+
+    sliders.push({ name: `action-popup-${sliderIndex}`, slider });
+  });
+};
 
 const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
   const containerArray = document.querySelectorAll(
@@ -15,6 +51,8 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
   if (containerArray.length === 0) {
     return;
   }
+
+  const typeSliders: ITypesSlider[] = [];
 
   containerArray.forEach((item, sliderIndex) => {
     const slider = makeSlider({
@@ -34,10 +72,14 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       return;
     }
 
-    swipeToHandler(slider, item);
-
+    // swipeToHandler(slider, item);
+    typeSliders.push({ slider, item });
     sliders.push({ name: `types-${sliderIndex}`, slider });
   });
+
+  // console.log(typeSliders);
+  swipeToAllHandler(typeSliders);
+  // swipeToHandler(typeSliders, item);
 };
 
 const sliderFeedbackInit = (sliders: Array<IInitializedSlider>) => {
@@ -119,6 +161,7 @@ const slidersInit = () => {
   sliderTypesInit(sliders);
   sliderFeedbackInit(sliders);
   sliderCatalogInit(sliders);
+  sliderActionFormInit(sliders);
   return sliders;
 };
 

@@ -1,4 +1,3 @@
-import vevet from '../config/vevet';
 import Popup from './popupClass';
 
 const initPopups = (): Popup[] => {
@@ -17,23 +16,15 @@ const initPopups = (): Popup[] => {
 
   popupArr.forEach((popup) => {
     popup.initOpen(popupArr);
+  });
 
-    if (popup.name === '_popup-header-modal') {
-      const callback = () => {
-        if (vevet.viewport.isDesktop) {
-          return;
-        }
-
-        if (popup.parent.classList.contains('_opened')) {
-          popup.timeline?.reverse();
-          // document.querySelector('html')?.classList.remove('lock');
-          // document.querySelector('body')?.classList.remove('lock');
-
-          popup.video?.pause();
-        }
-      };
-
-      popup.onWindowResize(callback);
+  popupArr.forEach((popup) => {
+    if (popup.name === '_popup-form') {
+      const formPopup = popup;
+      setTimeout(() => {
+        formPopup.parent.style.display = 'none';
+        formPopup.parent.style.opacity = '0';
+      }, 0);
     }
   });
 

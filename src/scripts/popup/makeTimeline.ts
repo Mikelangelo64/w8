@@ -77,10 +77,8 @@ const makeTimeline = (
   });
   timeline.addCallback('start', () => {
     if (!timeline.isReversed) {
-      if (!parent.classList.contains('popup-search')) {
-        document.querySelector('html')?.classList.add('lock');
-        document.querySelector('body')?.classList.add('lock');
-      }
+      document.querySelector('html')?.classList.add('lock');
+      document.querySelector('body')?.classList.add('lock');
 
       parent.classList.add('_opened');
 

@@ -1,48 +1,169 @@
-.action
-  p.action__title Отримати консультацію
+-
+  const actionFormArray = [
+    {
+      title: `
+        <span>КОЛИ ВИ БАЖАЄТЕ</span>
+        <span>ПРИДБАТИ</span>
+        <span>АВТО?</span>
+      `,
+      subtitle: '',
+      radio: {
+        name: 'term',
+        list: [
+          {
+            value: 'найближчим часом',
+            isChecked: 'true'
+          },
+          {
+            value: 'В наступні 3 місяці',
+            isChecked: 'false'
+          },
+          {
+            value: 'цього року',
+            isChecked: 'false'
+          },
+        ],
+      },
+      button: {
+        isSumbit: 'false',
+        value: 'до наступного кроку',
+      },
+    },
+    {
+      title: `
+        <span>ЯКИЙ</span>
+        <span>БЮДЖЕТ</span>
+        <span>НА АВТО?</span>
+      `,
+      subtitle: '',
+      radio: {
+        name: 'budget',
+        list: [
+          {
+            value: 'до 10 000$',
+            isChecked: 'false'
+          },
+          {
+            value: '11 000$ - 20 000$',
+            isChecked: 'true'
+          },
+          {
+            value: '21 000$ +',
+            isChecked: 'false'
+          },
+        ],
+      },
+      button: {
+        isSumbit: 'false',
+        value: 'до наступного кроку',
+      },
+    },
+    {
+      title: `
+        <span>ОСТАННІЙ</span>
+        <span></span>
+        <span>крок</span>
+      `,
+      subtitle: 'Залиште заявку, і наш експерт підбере для вас вигідне авто із США',
+      radio: {
+        name: '',
+        list: [],
+      },
+      button: {
+        isSumbit: 'true',
+        value: 'Зв\'яжіться зі мною',
+      },
+    },
+  ];
 
-  .action__main
-    form#form-popup.form.action__form(action='post') 
-      //- div
-      //-   label(for='popup-select') 
-      //-     strong Тип звернення
-      //-     select#popup-select(name='select', form='form-popup')
-      //-       option(value='value 1', selected) value 1
-      //-       option(value='value 2') value 2
-      //-       option(value='value 3') value 3
-      //-     span.wpcf7-not-valid-tip Невірний формат
+.action-popup
+  form#form-popup.form.hidden.action-popup__form(action='post') 
+    input#popup-type(type='text', name='type')
+    input#popup-term(type='text', name='term')
+    input#popup-budget(type='text', name='budget')
+    input#popup-name(type='text', name='name')
+    input#popup-telephone(type='tel', name='telephone')
 
-      div
-        label(for='popup-name') 
-          strong Ім’я
-          input#popup-name(type='text', name='name')
-          span.wpcf7-not-valid-tip Невірний формат
+    input#form-popup-submit(type='submit')
 
-        label(for='popup-lastname') 
-          strong Прізвище
-          input#popup-lastname(type='text', name='lastname')
-          span.wpcf7-not-valid-tip Невірний формат
+  .action-popup__content
+    .action-popup-media.resize-text-container
+      .action-popup-media__text hatchback
 
-      div
-        label(for='popup-email') 
-          strong Email
-          input#popup-email(type='email', name='email')
-          span.wpcf7-not-valid-tip Невірний формат
+      .action-popup-media__img
+        img(src=require('@/assets/img/types-white/car-1.png'), alt='hatchback')
 
-        label(for='popup-telephone') 
-          strong Телефон
-          input#popup-telephone(type='tel', name='telephone')
-          span.wpcf7-not-valid-tip Невірний формат
+    .action-popup-slider.swiper
+      .swiper-wrapper
+        each item, activeIndex in actionFormArray
+          .swiper-slide
+            .action-popup__item
+              p.action-popup__title!= item.title
 
-      div
-        label(for='popup-request') 
-          strong Чим ми можемо допомогти
-          textarea#popup-request(name='request')
-          span.wpcf7-not-valid-tip Невірний формат
+              if item.subtitle
+                p.action-popup__subtitle!= item.subtitle
 
-      p
-        button(type='submit') Відправити
+              if item.radio.name
+                .action-popup-list
+                  each element, index in item.radio.list
+                    label.action-popup-list__item(
+                      for=`${item.radio.name}-${index + 1}`
+                    ) 
+                      if element.isChecked === 'true'
+                        input(
+                          id=`${item.radio.name}-${index + 1}`,
+                          type='radio',
+                          name=`${item.radio.name}`,
+                          value=`${element.value}`,
+                          checked
+                        )
 
-        span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
-          a(href='./document.html', target='_blank', rel='noreferrer') умовами конфіденційності
-          span компанії Persona Patman
+                        .action-popup-list__item__inner
+                          p= element.value
+
+                      else
+                        input(
+                          id=`${item.radio.name}-${index + 1}`,
+                          type='radio',
+                          name=`${item.radio.name}`,
+                          value=`${element.value}`
+                        )
+
+                        .action-popup-list__item__inner
+                          p= element.value
+
+              else
+                .action-popup-last
+                  input#action-popup-last__name.action-popup-last__input(
+                    type='text',
+                    name='name',
+                    placeholder='Ім\'я*'
+                  )
+
+                  input#action-popup-last__telephone.action-popup-last__input(
+                    type='tel',
+                    name='telephone',
+                    placeholder='+ 380 (00) 000 00 00'
+                  )
+
+              .action-popup-steps
+                .action-popup-steps__item.active
+
+                each slide, slideIndex in actionFormArray
+                  .action-popup-steps__item(
+                    class=`${slideIndex <= activeIndex ? 'active' : ''}`
+                  )
+
+                //- class=`${item.button.isSumbit === 'true' ? 'popup__button' : ''}`,
+              if item.button.isSumbit === 'true'
+                label.action-popup__button.button-filled(
+                  for='form-popup-submit',
+                  data-action='submit'
+                )
+                  span= item.button.value
+              else
+                button.action-popup__button.button-filled(
+                  data-action='next-step'
+                )
+                  span= item.button.value
+    //- .action-popup__main

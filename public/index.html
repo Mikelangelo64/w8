@@ -32,7 +32,7 @@
               </svg></a><button class="menu-burger popup-open" data-popup="_popup-menu"></button></div>
         </div>
       </div>
-      <div class="popup popup-video info-video__popup " data-popupname="_popup-info-video" aria-modal="true"
+      <div class="popup popup-video info-video__popup   " data-popupname="_popup-info-video" aria-modal="true"
         role="dialog">
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="popup popup-menu menu__popup " data-popupname="_popup-menu" aria-modal="true" role="dialog">
+      <div class="popup popup-menu menu__popup   " data-popupname="_popup-menu" aria-modal="true" role="dialog">
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
@@ -80,22 +80,37 @@
           </div>
         </div>
       </div>
-      <div class="popup popup-feedback thanks__popup " data-popupname="_popup-thanks" aria-modal="true" role="dialog">
+      <div class="popup popup-feedback thanks__popup  fullscreen " data-popupname="_popup-thanks" aria-modal="true"
+        role="dialog">
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
-          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
+          <div class="popup__wrapper"><button class="popup__close hidden"><img src="assets/img/popup-close.svg"
                 alt="close"></button>
             <div class="popup__content">
-              <div class="feedback-popup">
-                <div class="feedback-popup__label"><img src="assets/img/success.svg" alt="success"></div>
-                <p class="feedback-popup__title">Дякуємо! Форму успішно відправлено.</p>
+              <div class="thanks-popup">
+                <div class="thanks-popup-bg">
+                  <div class="thanks-popup-bg__back">
+                    <div class="thanks-popup-bg__back__container"><img class="desktop"
+                        src="assets/img/popup/thanks-bg.png" alt="bg"><img class="mobile"
+                        src="assets/img/popup/thanks-bg-mobile.png" alt="bg"></div>
+                  </div>
+                  <div class="thanks-popup-bg__img">
+                    <div class="thanks-popup-bg__img__container"><img src="assets/img/popup/thanks-car.png" alt="bg">
+                    </div>
+                  </div>
+                </div>
+                <div class="thanks-popup__content">
+                  <div class="thanks-popup__title"><span>Дякуюємо!</span><span>Очікуйте на дзвінок експерта
+                      компанії</span><span>W8 Shipping!</span></div><button
+                    class="thanks-popup__button button-filled popup__button"><span>Зв'яжіться зі мною</span></button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="popup popup-feedback error__popup " data-popupname="_popup-error" aria-modal="true" role="dialog">
+      <div class="popup popup-feedback error__popup   " data-popupname="_popup-error" aria-modal="true" role="dialog">
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
@@ -105,6 +120,121 @@
               <div class="feedback-popup">
                 <div class="feedback-popup__label"><img src="assets/img/error.svg" alt="error"></div>
                 <p class="feedback-popup__title">Вибачте, сталася помилка. Спробуйте пізніше</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-form form__popup  fullscreen " data-popupname="_popup-form" aria-modal="true"
+        role="dialog">
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper"><button class="popup__close hidden"><img src="assets/img/popup-close.svg"
+                alt="close"></button>
+            <div class="popup__content">
+              <div class="action-popup">
+                <form class="form hidden action-popup__form" id="form-popup" action="post"> <input id="popup-type"
+                    type="text" name="type"><input id="popup-term" type="text" name="term"><input id="popup-budget"
+                    type="text" name="budget"><input id="popup-name" type="text" name="name"><input id="popup-telephone"
+                    type="tel" name="telephone"><input id="form-popup-submit" type="submit"></form>
+                <div class="action-popup__content">
+                  <div class="action-popup-media resize-text-container">
+                    <div class="action-popup-media__text">hatchback</div>
+                    <div class="action-popup-media__img"><img src="assets/img/types-white/car-1.png" alt="hatchback">
+                    </div>
+                  </div>
+                  <div class="action-popup-slider swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>КОЛИ ВИ БАЖАЄТЕ</span>
+                            <span>ПРИДБАТИ</span>
+                            <span>АВТО?</span>
+                          </p>
+                          <div class="action-popup-list"><label class="action-popup-list__item" for="term-1"> <input
+                                id="term-1" type="radio" name="term" value="найближчим часом" checked>
+                              <div class="action-popup-list__item__inner">
+                                <p>найближчим часом</p>
+                              </div>
+                            </label><label class="action-popup-list__item" for="term-2"> <input id="term-2" type="radio"
+                                name="term" value="В наступні 3 місяці">
+                              <div class="action-popup-list__item__inner">
+                                <p>В наступні 3 місяці</p>
+                              </div>
+                            </label><label class="action-popup-list__item" for="term-3"> <input id="term-3" type="radio"
+                                name="term" value="цього року">
+                              <div class="action-popup-list__item__inner">
+                                <p>цього року</p>
+                              </div>
+                            </label></div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item"></div>
+                            <div class="action-popup-steps__item"></div>
+                          </div><button class="action-popup__button button-filled" data-action="next-step"><span>до
+                              наступного кроку</span></button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>ЯКИЙ</span>
+                            <span>БЮДЖЕТ</span>
+                            <span>НА АВТО?</span>
+                          </p>
+                          <div class="action-popup-list"><label class="action-popup-list__item" for="budget-1"> <input
+                                id="budget-1" type="radio" name="budget" value="до 10 000$">
+                              <div class="action-popup-list__item__inner">
+                                <p>до 10 000$</p>
+                              </div>
+                            </label><label class="action-popup-list__item" for="budget-2"> <input id="budget-2"
+                                type="radio" name="budget" value="11 000$ - 20 000$" checked>
+                              <div class="action-popup-list__item__inner">
+                                <p>11 000$ - 20 000$</p>
+                              </div>
+                            </label><label class="action-popup-list__item" for="budget-3"> <input id="budget-3"
+                                type="radio" name="budget" value="21 000$ +">
+                              <div class="action-popup-list__item__inner">
+                                <p>21 000$ +</p>
+                              </div>
+                            </label></div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item"></div>
+                          </div><button class="action-popup__button button-filled" data-action="next-step"><span>до
+                              наступного кроку</span></button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>ОСТАННІЙ</span>
+                            <span></span>
+                            <span>крок</span>
+                          </p>
+                          <p class="action-popup__subtitle">Залиште заявку, і наш експерт підбере для вас вигідне авто
+                            із США</p>
+                          <div class="action-popup-last"><input class="action-popup-last__input"
+                              id="action-popup-last__name" type="text" name="name" placeholder="Ім'я*"><input
+                              class="action-popup-last__input" id="action-popup-last__telephone" type="tel"
+                              name="telephone" placeholder="+ 380 (00) 000 00 00"></div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                          </div><label class="action-popup__button button-filled" for="form-popup-submit"
+                            data-action="submit"><span>Зв'яжіться зі мною</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -187,9 +317,9 @@
     </section>
     <section class="types first">
       <div class="_container">
-        <div class="types__wrapper"><a class="button-filled types__button mobile" href="#"> <span>до наступного
-              кроку</span></a>
-          <div class="types-slider swiper">
+        <div class="types__wrapper"><button class="button-filled types__button mobile popup-open"
+            data-popup="_popup-form"><span>до наступного кроку</span></button>
+          <div class="types-slider resize-text-container swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="types-slider__item">
@@ -224,7 +354,8 @@
               <li><button class="types-list__button swipe-to-button">універсал</button></li>
               <li><button class="types-list__button swipe-to-button">хетчбек</button></li>
               <li><button class="types-list__button swipe-to-button">кросовер</button></li>
-            </ul><a class="button-filled types__button desktop" href="#"> <span>до наступного кроку</span></a>
+            </ul><button class="button-filled types__button desktop popup-open" data-popup="_popup-form"><span>до
+                наступного кроку</span></button>
           </div>
         </div>
       </div>
@@ -479,9 +610,9 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
     </section>
     <section class="types dark">
       <div class="_container">
-        <div class="types__wrapper"><a class="button-filled types__button mobile" href="#"> <span>до наступного
-              кроку</span></a>
-          <div class="types-slider swiper">
+        <div class="types__wrapper"><button class="button-filled types__button mobile popup-open"
+            data-popup="_popup-form"><span>до наступного кроку</span></button>
+          <div class="types-slider resize-text-container swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="types-slider__item">
@@ -516,7 +647,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
               <li><button class="types-list__button swipe-to-button">універсал</button></li>
               <li><button class="types-list__button swipe-to-button">хетчбек</button></li>
               <li><button class="types-list__button swipe-to-button">кросовер</button></li>
-            </ul><a class="button-empty types__button desktop" href="#"> <span>до наступного кроку</span></a>
+            </ul><button class="button-empty types__button desktop popup-open" data-popup="_popup-form"><span>до
+                наступного кроку</span></button>
           </div>
         </div>
       </div>
