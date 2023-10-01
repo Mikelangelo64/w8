@@ -45,6 +45,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "imask": "^7.1.3",
     "normalize.css": "^8.0.1",
     "swiper": "^10.3.0",
     "vevet": "^2.17.0"

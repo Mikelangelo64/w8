@@ -6,6 +6,7 @@ import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
 import initStepForm from './stepForm/init';
 import resizeTextHelper from './resizeTextHelper';
+import initTelephoneMask from './telephoneMask/init';
 
 export const init = () => {
   scrollBarInit();
@@ -41,6 +42,7 @@ export const init = () => {
   anchorsInit(0, popups);
   scrollBannerHandler(0);
   initStepForm(sliders, popups);
+  const inputMaskArray = initTelephoneMask();
 
   const formArr = document.querySelectorAll('form');
   const hasError = false;
@@ -62,9 +64,21 @@ export const init = () => {
             if (inputs.length !== 0) {
               inputs.forEach((inputProp) => {
                 const input = inputProp;
-                // console.log(input, input.value);
+                console.log(input, input.value);
+
+                if (input.type === 'tel') {
+                  return;
+                }
 
                 input.value = '';
+              });
+            }
+
+            if (inputMaskArray) {
+              inputMaskArray.forEach((inputMaskProp) => {
+                const inputMask = inputMaskProp;
+                inputMask.value = '';
+                inputMask.updateValue();
               });
             }
           } else if (isError && hasError) {
@@ -84,11 +98,44 @@ export const init = () => {
     // document.addEventListener(
     //   'wpcf7mailsent',
     //   function () {
-    //     popups.forEach(({ timeline, isThanksPopup }) => {
-    //       if (isThanksPopup) {
-    //         timeline.play();
+    //     popups.forEach(({ timeline, isThanks, isError }) => {
+    //       if (isThanks && !hasError) {
+    //         timeline?.play();
+
+    //         formArr.forEach((form) => {
+    //           const inputs = Array.from(
+    //             form.querySelectorAll('input, textarea') as NodeListOf<
+    //               HTMLInputElement | HTMLTextAreaElement
+    //             >
+    //           );
+
+    //           if (inputs.length !== 0) {
+    //             inputs.forEach((inputProp) => {
+    //               const input = inputProp;
+    //               if (input.type === 'tel') {
+    //                 return;
+    //               }
+    //               input.value = '';
+    //             });
+    //           }
+
+    //           if (inputMaskArray) {
+    //             inputMaskArray.forEach((inputMaskProp) => {
+    //               const inputMask = inputMaskProp;
+    //               inputMask.value = '';
+    //               inputMask.updateValue();
+    //             });
+    //           }
+    //         });
+    //       } else if (isError && hasError) {
+    //         timeline?.play();
     //       } else {
-    //         timeline.reverse();
+    //         timeline?.reverse();
+
+    //         setTimeout(() => {
+    //           document.querySelector('html')?.classList.add('lock');
+    //           document.querySelector('body')?.classList.add('lock');
+    //         }, 300);
     //       }
     //     });
     //   },
