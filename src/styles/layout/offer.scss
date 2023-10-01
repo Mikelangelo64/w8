@@ -34,7 +34,7 @@
       }
 
       @include viewport-phone {
-        margin-top: px-to-rem(20);
+        margin-top: px-to-rem(52);
       }
     }
   }
@@ -249,9 +249,18 @@
       }
     }
   }
+
+  //.offer-slider 
+  &-slider {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
   
   //.offer-media 
   &-media {
+    position: relative;
+    z-index: 0;
     width: 100%;
 
     @include viewport-tablet-min {
@@ -263,6 +272,24 @@
     }
     @include viewport-phone {
       max-width: px-to-rem(294);
+    }
+
+    //.offer-media__frame 
+    &__frame {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 1;
+
+      width: 110%;
+      height: 104%;
+
+      transform: translate(-50%, 0);
+      pointer-events: none;
+      
+      img {
+        @include absolute-fullsize;
+      }
     }
 
     //.offer-media__img 

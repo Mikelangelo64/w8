@@ -51,9 +51,23 @@ section.offer
           )
 
       .offer-media
-        .offer-media__img
-          img(
-            src=require('@/assets/img/offer/phone.png'),
-            alt='media',
-            loading='lazy'
-          )
+        .offer-media__frame
+          img(src=require('@/assets/img/offer/phone-frame.png'), alt='frame')
+
+        .offer-slider.swiper
+          .swiper-wrapper
+            .swiper-slide
+              .offer-media__img
+                img(
+                  src=require('@/assets/img/offer/viber.png'),
+                  alt='media',
+                  loading='lazy'
+                )
+
+            .swiper-slide
+              .offer-media__img
+                img(
+                  src=require('@/assets/img/offer/telegram.png'),
+                  alt='media',
+                  loading='lazy'
+                )

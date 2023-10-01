@@ -295,11 +295,11 @@
     @include viewport-phone {
       justify-content: center;
 
-      @media (max-width: 400px) {
-        flex-direction: column;
-        justify-content: unset;
-        align-items: center;
-      }
+      // @media (max-width: 400px) {
+      //   // flex-direction: column;
+      //   // justify-content: unset;
+      //   // align-items: center;
+      // }
     }
 
     > * + * {
@@ -307,16 +307,23 @@
 
       @include viewport-phone {
         @media (max-width: 400px) {
-          margin-left: unset;
-          margin-top: px-to-rem(8);
+          margin-left: px-to-rem(4);
+          // margin-left: unset;
+          // margin-top: px-to-rem(8);
         }
       }
     }
   }
   
   //.banner__button 
-  // &__button {
-  // }
+  &__button {
+    @include viewport-phone {
+      @media (max-width: 374px) {
+        padding: px-to-rem(12) px-to-rem(8);
+        font-size: px-to-rem(12);
+      }
+    }
+  }
   
   //.banner__down 
   &__down {

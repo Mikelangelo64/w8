@@ -110,6 +110,10 @@
   //color: var(--color-white);
   background-color: transparent;
 
+  @include mobile-device {
+    border-radius: 0;
+  }
+
   @include hover-focus-visible {
     @include non-mobile-device {
       &::after {
@@ -121,7 +125,9 @@
   &::after {
     content: '';
     @include absolute-fullsize;
-    border-radius: inherit;
+    //border-radius: inherit;
+    border-radius: px-to-rem(10);
+
     border: 1px solid var(--color-theme);
     @include transition(border 0.4s);
   }

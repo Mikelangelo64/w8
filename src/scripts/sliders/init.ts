@@ -60,11 +60,11 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       className: 'types',
       config: {
         effect: 'fade',
-        allowTouchMove: true
-        // autoplay: {
-        //   delay: 6000,
-        //   disableOnInteraction: false
-        // }
+        allowTouchMove: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+        }
       }
     });
 
@@ -98,22 +98,54 @@ const sliderFeedbackInit = (sliders: Array<IInitializedSlider>) => {
       paginationType: 'fraction',
       config: {
         allowTouchMove: true,
-        slidesPerView: 'auto'
+        slidesPerView: 'auto',
 
         // breakpoints: {
         //   650: {
         //     slidesPerView: 2
         //   }
         // }
-        // autoplay: {
-        //   delay: 6000,
-        //   disableOnInteraction: false
-        // }
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+        }
       }
     });
 
     if (slider) {
       sliders.push({ name: `feedback-${sliderIndex}`, slider });
+    }
+  });
+};
+
+const sliderOfferInit = (sliders: Array<IInitializedSlider>) => {
+  const containerArray = document.querySelectorAll(
+    '.offer'
+  ) as NodeListOf<HTMLElement>;
+
+  if (containerArray.length === 0) {
+    return;
+  }
+
+  containerArray.forEach((item, sliderIndex) => {
+    const slider = makeSlider({
+      container: item,
+      className: 'offer',
+      config: {
+        effect: 'fade',
+        allowTouchMove: false,
+        spaceBetween: 10,
+        loop: true,
+
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+        }
+      }
+    });
+
+    if (slider) {
+      sliders.push({ name: `offer-${sliderIndex}`, slider });
     }
   });
 };
@@ -141,11 +173,11 @@ const sliderCatalogInit = (sliders: Array<IInitializedSlider>) => {
           899: {
             spaceBetween: 24
           }
+        },
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
         }
-        // autoplay: {
-        //   delay: 6000,
-        //   disableOnInteraction: false
-        // }
       }
     });
 
@@ -162,6 +194,7 @@ const slidersInit = () => {
   sliderFeedbackInit(sliders);
   sliderCatalogInit(sliders);
   sliderActionFormInit(sliders);
+  sliderOfferInit(sliders);
   return sliders;
 };
 
