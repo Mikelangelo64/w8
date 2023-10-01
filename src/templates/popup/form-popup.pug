@@ -137,12 +137,14 @@
                   input#action-popup-last__name.action-popup-last__input(
                     type='text',
                     name='name',
+                    required,
                     placeholder='Ім\'я*'
                   )
 
                   input#action-popup-last__telephone.action-popup-last__input(
                     type='tel',
                     name='telephone',
+                    required,
                     placeholder='+ 380 (00) 000 00 00'
                   )
 
@@ -156,7 +158,7 @@
 
                 //- class=`${item.button.isSumbit === 'true' ? 'popup__button' : ''}`,
               if item.button.isSumbit === 'true'
-                label.action-popup__button.button-filled(
+                label.locked.action-popup__button.button-filled(
                   for='form-popup-submit',
                   data-action='submit'
                 )

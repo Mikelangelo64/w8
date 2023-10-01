@@ -333,8 +333,12 @@
   }
   
   //.action-popup__button 
-  // &__button {
-  // }
+  &__button {
+    &.locked {
+      opacity: 0.8;
+      pointer-events: none;
+    }
+  }
   
   //.action-popup-last 
   &-last {

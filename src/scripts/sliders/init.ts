@@ -27,7 +27,7 @@ const sliderActionFormInit = (sliders: Array<IInitializedSlider>) => {
       className: 'action-popup',
       config: {
         effect: 'fade',
-        allowTouchMove: true
+        allowTouchMove: false
         // autoplay: {
         //   delay: 6000,
         //   disableOnInteraction: false
@@ -60,7 +60,7 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       className: 'types',
       config: {
         effect: 'fade',
-        allowTouchMove: true,
+        allowTouchMove: false,
         autoplay: {
           delay: 2000,
           disableOnInteraction: false

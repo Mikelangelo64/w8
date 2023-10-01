@@ -1,6 +1,6 @@
 import debounce from './config/debounce';
 
-export const resizeTextHandler = (textContainer: HTMLElement) => {
+const resizeTextHandler = (textContainer: HTMLElement) => {
   const { width } = textContainer.getBoundingClientRect();
   textContainer.style.setProperty('--slider-width', `${width}px`);
 };

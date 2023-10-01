@@ -1,5 +1,38 @@
 import Swiper from 'swiper';
 
+const inputRequieredHandler = (
+  container: HTMLElement,
+  buttonArray: NodeListOf<HTMLElement>
+) => {
+  const inputArray = container.querySelectorAll<HTMLInputElement>('input');
+
+  if (inputArray.length === 0) {
+    return;
+  }
+
+  inputArray.forEach((input) => {
+    if (input.type === 'radio') {
+      return;
+    }
+
+    input.addEventListener('change', () => {
+      const isAnyInputEmpty = !!Array.from(inputArray).find(
+        (item) => item.value === ''
+      );
+
+      buttonArray.forEach((button) => {
+        if (button.dataset.action === 'submit') {
+          if (isAnyInputEmpty) {
+            button.classList.add('locked');
+          } else {
+            button.classList.remove('locked');
+          }
+        }
+      });
+    });
+  });
+};
+
 const buttonActionHandler = (
   button: HTMLElement,
   slider: Swiper,
@@ -55,6 +88,8 @@ const initFormControl = (form: HTMLElement, slider: Swiper) => {
   if (buttonArray.length === 0 || slideArray.length === 0) {
     return;
   }
+
+  inputRequieredHandler(slider.el, buttonArray);
 
   buttonArray.forEach((button) => {
     button.addEventListener('click', () => {
