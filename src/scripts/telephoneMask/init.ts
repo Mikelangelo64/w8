@@ -12,7 +12,7 @@ const initTelephoneMask = () => {
 
   inputTelArray.forEach((input) => {
     const options = {
-      mask: '+{38} (00) 000 00 00'
+      mask: '+{38\\0} (00) 000 00 00'
     };
 
     const mask = IMask(input, options);
