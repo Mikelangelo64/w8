@@ -89,7 +89,7 @@ const initFormControl = (form: HTMLElement, slider: Swiper) => {
     return;
   }
 
-  inputRequieredHandler(slider.el, buttonArray);
+  //inputRequieredHandler(slider.el, buttonArray);
 
   buttonArray.forEach((button) => {
     button.addEventListener('click', () => {
