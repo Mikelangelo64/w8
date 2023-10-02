@@ -137,11 +137,10 @@ section.catalog
                           class=`${parameter.isRed === 'true' ? 'marked' : ''}`
                         )= parameter.value
 
-                  a.catalog-slider-list__more.button-filled.anchor(
-                    href='#',
-                    data-goto='.types.dark'
-                  )
-                    span Детальніше
+                  button.catalog-slider-list__more.button-filled.popup-open(
+                    data-popup='_popup-form-short-order'
+                  ) 
+                    span Замовити авто
 
         .catalog-slider__bottom
           .catalog-slider-controls

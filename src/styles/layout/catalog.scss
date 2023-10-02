@@ -149,6 +149,7 @@
     
     //.catalog-slider__image 
     &__image {
+      flex: 1 0 auto;
       display: flex;
       min-height: px-to-rem(100);
       background-color: var(--color-grey);

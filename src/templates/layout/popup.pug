@@ -41,6 +41,20 @@
       isFullscreen: 'true',
       isFullscreenPhone: 'false'
     },
+    { 
+      name: 'form-short-selection', 
+      type: 'form-short', 
+      video: '',
+      isFullscreen: 'false',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'form-short-order', 
+      type: 'form-short', 
+      video: '',
+      isFullscreen: 'false',
+      isFullscreenPhone: 'false'
+    },
   ];
 
 each item in popupList
@@ -55,20 +69,22 @@ each item in popupList
 
     .popup__scroll
       .popup__wrapper
-        button.popup__close(
-          class=`${item.type === 'menu' || item.isFullscreen === 'true' ? 'hidden' : ''}`
-        )
-          img(
-            class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
-            src=require('@/assets/img/popup-close.svg'),
-            alt='close'
-          )
+        button.popup__close(class=`${item.type === 'menu' ? 'hidden' : ''}`)
+          if item.isFullscreen !== 'true'
+            img(
+              class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
+              src=require('@/assets/img/popup-close.svg'),
+              alt='close'
+            )
 
           if item.isFullscreenPhone === 'true'
             img.mobile(
               src=require('@/assets/img/popup-close-black.svg'),
               alt='close'
             )
+
+          if item.isFullscreen === 'true'
+            img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
 
         .popup__content
           case item.type 
@@ -91,6 +107,13 @@ each item in popupList
 
               if item.name === 'error'
                 include @/templates/popup/error-popup.pug
+
+            when 'form-short'
+              if item.name === 'form-short-selection'
+                include @/templates/popup/form-popup-short.pug
+
+              if item.name === 'form-short-order'
+                include @/templates/popup/form-popup-short-order.pug
 
             when 'form'
               include @/templates/popup/form-popup.pug

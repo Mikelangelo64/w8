@@ -1,7 +1,7 @@
 @import '../base';
 
 .popup {
-  &.popup-form {
+  &.form__popup {
     display: flex;
     opacity: 0;
   }
@@ -12,7 +12,7 @@
 
   //.popup__overlay
   &__overlay {
-    background-color: rgba(var(--color-black--rgb), 0.88);
+    background-color: rgba(var(--color-black-100--rgb), 0.66);
 
     @at-root .popup.fullscreen-phone & {
       @include viewport-phone {
@@ -54,10 +54,18 @@
     }
 
     @at-root .popup.error__popup & {  
+      border: 1px solid var(--color-black);
+      border-radius: px-to-rem(10);
+
       @include viewport-tablet-min {
         max-width: px-to-rem(400);
         padding: px-to-rem(40) px-to-rem(32);
       }
+    }
+
+    @at-root .popup.popup-form-short & {  
+      border: 1px solid var(--color-black);
+      border-radius: px-to-rem(10);
     }
 
     @at-root .popup.popup-menu & {
@@ -100,6 +108,17 @@
     }
 
     @at-root .popup.fullscreen-phone & {
+      @include viewport-phone {
+        top: px-to-rem(10);
+        right: px-to-rem(10);
+      }
+    }
+
+    @at-root .popup.fullscreen & {
+      @include viewport-tablet-min {
+        top: px-to-rem(20);
+        right: px-to-rem(30);
+      }
       @include viewport-phone {
         top: px-to-rem(10);
         right: px-to-rem(10);

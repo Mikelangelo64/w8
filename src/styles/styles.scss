@@ -193,6 +193,17 @@ section,
   }
 }
 
+.form-short-popup {
+  > * + * {
+    margin-top: px-to-rem(42);
+  }
+
+  //.form-short-popup__form 
+  &__form {
+    width: 100%;
+  }
+}
+
 //templates
 @import './layout/form';
 @import './layout/header';

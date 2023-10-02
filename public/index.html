@@ -85,7 +85,7 @@
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
-          <div class="popup__wrapper"><button class="popup__close hidden"><img src="assets/img/popup-close.svg"
+          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close-black.svg"
                 alt="close"></button>
             <div class="popup__content">
               <div class="thanks-popup">
@@ -130,7 +130,7 @@
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
-          <div class="popup__wrapper"><button class="popup__close hidden"><img src="assets/img/popup-close.svg"
+          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close-black.svg"
                 alt="close"></button>
             <div class="popup__content">
               <div class="action-popup">
@@ -159,9 +159,9 @@
                                 <p>найближчим часом</p>
                               </div>
                             </label><label class="action-popup-list__item" for="term-2"> <input id="term-2" type="radio"
-                                name="term" value="В наступні 3 місяці">
+                                name="term" value="В наступні три місяці">
                               <div class="action-popup-list__item__inner">
-                                <p>В наступні 3 місяці</p>
+                                <p>В наступні три місяці</p>
                               </div>
                             </label><label class="action-popup-list__item" for="term-3"> <input id="term-3" type="radio"
                                 name="term" value="цього року">
@@ -217,10 +217,10 @@
                             <span></span>
                             <span>крок</span>
                           </p>
-                          <p class="action-popup__subtitle">Залиште заявку, і наш експерт підбере для вас вигідне авто
-                            із США</p>
+                          <p class="action-popup__subtitle">Залиште заявку і наш експерт підбере для вас вигідне авто із
+                            США</p>
                           <div class="action-popup-last"><input class="action-popup-last__input"
-                              id="action-popup-last__name" type="text" name="name" required placeholder="Ім'я*"><input
+                              id="action-popup-last__name" type="text" name="name" required placeholder="Ім'я"><input
                               class="action-popup-last__input" id="action-popup-last__telephone" type="tel"
                               name="telephone" required placeholder="+ 380 (00) 000 00 00"></div>
                           <div class="action-popup-steps">
@@ -235,6 +235,52 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-form-short form-short-selection__popup   " data-popupname="_popup-form-short-selection"
+        aria-modal="true" role="dialog">
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
+                alt="close"></button>
+            <div class="popup__content">
+              <div class="feedback-popup form-short-popup">
+                <p class="feedback-popup__title form-short-popup">Напис для форми "Отримати підбір авто"</p>
+                <form class="form-short-popup__form form" id="form-selection" action="post">
+                  <div><label for="selection-telephone"> <input id="selection-name" type="text" name="name"
+                        placeholder="Ім'я"><span class="wpcf7-not-valid-tip">Невірний формат</span></label><label
+                      for="selection-telephone"> <input id="selection-telephone" type="tel" name="telephone"
+                        placeholder="+ 380 (00) 000 00 00"><span class="wpcf7-not-valid-tip">Невірний
+                        формат</span></label></div>
+                  <p><button type="submit">Відправити</button></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-form-short form-short-order__popup   " data-popupname="_popup-form-short-order"
+        aria-modal="true" role="dialog">
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
+                alt="close"></button>
+            <div class="popup__content">
+              <div class="feedback-popup form-short-popup">
+                <p class="feedback-popup__title form-short-popup">Напис для форми "Замовити авто"</p>
+                <form class="form-short-popup__form form" id="form-selection" action="post">
+                  <div><label for="selection-telephone"> <input id="selection-name" type="text" name="name"
+                        placeholder="Ім'я"><span class="wpcf7-not-valid-tip">Невірний формат</span></label><label
+                      for="selection-telephone"> <input id="selection-telephone" type="tel" name="telephone"
+                        placeholder="+ 380 (00) 000 00 00"><span class="wpcf7-not-valid-tip">Невірний
+                        формат</span></label></div>
+                  <p><button type="submit">Відправити</button></p>
+                </form>
               </div>
             </div>
           </div>
@@ -270,8 +316,8 @@
               </div>
             </div>
             <div class="banner__buttons"><a class="banner__button button-empty anchor" href="#" data-goto=".types">
-                <span>Обрати бажане авто</span></a><a class="banner__button button-filled anchor" href="#"
-                data-goto=".types"> <span>отримати підбір авто</span></a></div>
+                <span>Обрати бажане авто</span></a><button class="banner__button button-filled popup-open"
+                data-popup="_popup-form-short-selection"> <span>отримати підбір авто</span></button></div>
           </div>
           <div class="banner__footer">
             <ul class="socials banner__socials">
@@ -425,8 +471,8 @@
                   </svg></span><span class="info-media__img"><span class="info-media__img__container"><img
                       src="assets/img/info.jpg" alt="info-video-preview" loading="lazy"></span></span></button></div>
           </div>
-          <div class="info__footer"><a class="info__button button-empty anchor" href="#" data-goto=".types.dark">
-              <span>безкоштовний підбір авто</span></a></div>
+          <div class="info__footer"><button class="info__button button-empty popup-open"
+              data-popup="_popup-form-short-selection"> <span>безкоштовний підбір авто</span></button></div>
         </div>
       </div>
     </section>
@@ -610,7 +656,7 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
     </section>
     <section class="types dark">
       <div class="_container">
-        <div class="types__wrapper"><button class="button-filled types__button mobile popup-open"
+        <div class="types__wrapper"><button class="button-empty types__button mobile popup-open"
             data-popup="_popup-form"><span>до наступного кроку</span></button>
           <div class="types-slider resize-text-container swiper">
             <div class="swiper-wrapper">
@@ -685,8 +731,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
-                      data-goto=".types.dark"><span>Детальніше</span></a>
+                    </ul><button class="catalog-slider-list__more button-filled popup-open"
+                      data-popup="_popup-form-short-order"> <span>Замовити авто</span></button>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -711,8 +757,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
-                      data-goto=".types.dark"><span>Детальніше</span></a>
+                    </ul><button class="catalog-slider-list__more button-filled popup-open"
+                      data-popup="_popup-form-short-order"> <span>Замовити авто</span></button>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -737,8 +783,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
-                      data-goto=".types.dark"><span>Детальніше</span></a>
+                    </ul><button class="catalog-slider-list__more button-filled popup-open"
+                      data-popup="_popup-form-short-order"> <span>Замовити авто</span></button>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -763,8 +809,8 @@ p.feedback-footer__description Більше 12 000 українцям W8shipping
                         <p class="catalog-slider-list__key">термін доставки</p>
                         <p class="catalog-slider-list__value">1 місяць</p>
                       </li>
-                    </ul><a class="catalog-slider-list__more button-filled anchor" href="#"
-                      data-goto=".types.dark"><span>Детальніше</span></a>
+                    </ul><button class="catalog-slider-list__more button-filled popup-open"
+                      data-popup="_popup-form-short-order"> <span>Замовити авто</span></button>
                   </div>
                 </div>
               </div>

@@ -173,13 +173,13 @@ form {
     width: 100%;
     display: grid;
 
-    gap: px-to-rem(34) px-to-rem(42);
-    
     @include viewport-tablet-min {
+      gap: px-to-rem(34) px-to-rem(42);
       grid-template-columns: repeat(2, 1fr);
     }
-
+    
     @include viewport-phone {
+      gap: px-to-rem(20) px-to-rem(34);
       grid-template-columns: 1fr;
     }
 

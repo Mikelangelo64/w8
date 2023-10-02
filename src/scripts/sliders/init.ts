@@ -60,11 +60,11 @@ const sliderTypesInit = (sliders: Array<IInitializedSlider>) => {
       className: 'types',
       config: {
         effect: 'fade',
-        allowTouchMove: false,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false
-        }
+        allowTouchMove: false
+        // autoplay: {
+        //   delay: 2000,
+        //   disableOnInteraction: false
+        // }
       }
     });
 

@@ -1,0 +1,21 @@
+.feedback-popup.form-short-popup
+  p.feedback-popup__title.form-short-popup Напис для форми "Замовити авто"
+
+  form#form-selection.form-short-popup__form.form(action='post')
+    div
+      label(for='selection-telephone') 
+        //- strong Телефон
+        input#selection-name(type='text', name='name', placeholder='Ім\'я')
+        span.wpcf7-not-valid-tip Невірний формат
+
+      label(for='selection-telephone') 
+        //- strong Телефон
+        input#selection-telephone(
+          type='tel',
+          name='telephone',
+          placeholder='+ 380 (00) 000 00 00'
+        )
+        span.wpcf7-not-valid-tip Невірний формат
+
+    p
+      button(type='submit') Відправити
