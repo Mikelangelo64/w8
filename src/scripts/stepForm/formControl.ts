@@ -33,7 +33,7 @@ const inputRequieredHandler = (
 
       buttonArray.forEach((button) => {
         if (button.dataset.action === 'submit') {
-          if (isAnyInputEmpty && isTelInputEmpty) {
+          if (isAnyInputEmpty || isTelInputEmpty) {
             button.classList.add('locked');
           } else {
             button.classList.remove('locked');
