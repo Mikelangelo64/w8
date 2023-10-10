@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title W8
+
+    link(rel='stylesheet', href=require('@/styles/pages/thank-you.scss'))
+
+  body
+    .thanks-popup
+      .thanks-popup-bg
+        .thanks-popup-bg__back
+          .thanks-popup-bg__back__container
+            img.desktop(
+              src=require('@/assets/img/popup/thanks-bg.png'),
+              alt='bg'
+            )
+            img.mobile(
+              src=require('@/assets/img/popup/thanks-bg-mobile.png'),
+              alt='bg'
+            )
+
+        .thanks-popup-bg__img
+          .thanks-popup-bg__img__container
+            img(src=require('@/assets/img/popup/thanks-car.png'), alt='bg')
+
+      .thanks-popup__content
+        .thanks-popup__title
+          span Дякуюємо!
+          span Очікуйте на дзвінок експерта компанії
+          span W8 Shipping!
+
+        a.thanks-popup__button.button-filled(href='#')
+          span Зв'яжіться зі мною
+
+    script(src=require('../index.ts')) 

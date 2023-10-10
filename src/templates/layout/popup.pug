@@ -90,13 +90,15 @@ each item in popupList
           case item.type 
             when 'video'
               .popup-video__media
-                video.video(
-                  disablePictureInPicture,
-                  preload='metadata',
-                  playsinline,
-                  controls
-                ) 
-                  source(data-src=require(`${item.video}`), type='video/mp4')
+                <eframe src="https://www.youtube.com/embed/IPX-L2F78fU?si=f9pik8AgtnWDWAPt&enablejsapi=1" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </eframe>
+                //- video.video(
+                //-   disablePictureInPicture,
+                //-   preload='metadata',
+                //-   playsinline,
+                //-   controls
+                //- ) 
+                //-   source(data-src=require(`${item.video}`), type='video/mp4')
 
             when 'menu'
               include @/templates/popup/menu.pug

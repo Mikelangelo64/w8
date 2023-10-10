@@ -59,7 +59,8 @@ const makeTimeline = (
   scroll: HTMLElement | null,
   overlay: HTMLElement | null,
   additional: HTMLElement | null,
-  video?: HTMLVideoElement | null
+  video?: HTMLVideoElement | null,
+  iframe?: HTMLIFrameElement | null
 ) => {
   if (!parent || !scroll || !overlay) {
     return undefined;
@@ -78,6 +79,16 @@ const makeTimeline = (
 
       if (video) {
         video.play();
+      }
+
+      if (iframe && iframe.contentWindow) {
+        const vidFunc = 'playVideo';
+        // console.dir(iframe.contentWindow.postMessage);
+
+        iframe.contentWindow.postMessage(
+          '{"event":"command","func":"' + vidFunc + '","args":""}',
+          '*'
+        );
       }
     }
   });
@@ -101,6 +112,15 @@ const makeTimeline = (
 
       if (video) {
         video.pause();
+      }
+
+      if (iframe && iframe.contentWindow) {
+        // console.log(iframe, iframe.contentWindow);
+        const vidFunc = 'pauseVideo';
+        iframe.contentWindow.postMessage(
+          '{"event":"command","func":"' + vidFunc + '","args":""}',
+          '*'
+        );
       }
     }
   });

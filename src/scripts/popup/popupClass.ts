@@ -60,6 +60,16 @@ class Popup {
 
   private _video: HTMLVideoElement | null;
 
+  set iframe(newValue: HTMLIFrameElement | null) {
+    this._iframe = newValue;
+  }
+
+  get iframe() {
+    return this._iframe;
+  }
+
+  private _iframe: HTMLIFrameElement | null;
+
   get timeline() {
     return this._timeline;
   }
@@ -89,6 +99,7 @@ class Popup {
     this._wrapper = this._parent.querySelector('.popup__wrapper');
     this._additional = this._parent.querySelector('.popup__additional');
     this._video = this._parent.querySelector('.video');
+    this._iframe = this._parent.querySelector('iframe, eframe');
 
     if (!this._name || !this._scroll || !this._overlay || !this._wrapper) {
       return;
@@ -101,7 +112,8 @@ class Popup {
       this._scroll,
       this._overlay,
       this._additional,
-      this._video
+      this._video,
+      this._iframe
     );
 
     this._openButtons = Array.from(
@@ -121,6 +133,18 @@ class Popup {
 
         button.addEventListener('click', () => {
           this._timeline?.reverse();
+
+          document.querySelector('html')?.classList.remove('lock');
+          document.querySelector('body')?.classList.remove('lock');
+
+          this._video?.pause();
+
+          if (this._iframe && this._iframe.contentWindow) {
+            this._iframe.contentWindow.postMessage(
+              '{"event":"command","func":"stopVideo","args":""}',
+              '*'
+            );
+          }
         });
       });
     }
@@ -132,6 +156,13 @@ class Popup {
         document.querySelector('body')?.classList.remove('lock');
 
         this._video?.pause();
+
+        if (this._iframe && this._iframe.contentWindow) {
+          this._iframe.contentWindow.postMessage(
+            '{"event":"command","func":"stopVideo","args":""}',
+            '*'
+          );
+        }
       }
     });
 
@@ -143,6 +174,12 @@ class Popup {
         document.querySelector('body')?.classList.remove('lock');
 
         this._video?.pause();
+        if (this._iframe && this._iframe.contentWindow) {
+          this._iframe.contentWindow.postMessage(
+            '{"event":"command","func":"stopVideo","args":""}',
+            '*'
+          );
+        }
       }
     });
   }

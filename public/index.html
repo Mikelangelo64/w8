@@ -40,10 +40,11 @@
           <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
                 alt="close"></button>
             <div class="popup__content">
-              <div class="popup-video__media"><video class="video" disablePictureInPicture preload="metadata"
-                  playsinline controls>
-                  <source data-src="assets/video/video.mp4" type="video/mp4">
-                </video></div>
+              <div class="popup-video__media">
+                <eframe src="https://www.youtube.com/embed/IPX-L2F78fU?si=f9pik8AgtnWDWAPt&enablejsapi=1"
+                  title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </eframe>
+              </div>
             </div>
           </div>
         </div>
@@ -136,8 +137,8 @@
               <div class="action-popup">
                 <form class="form hidden action-popup__form" id="form-popup" action="post"> <input id="popup-type"
                     type="text" name="type"><input id="popup-term" type="text" name="term"><input id="popup-budget"
-                    type="text" name="budget"><input id="popup-name" type="text" name="name"><input id="popup-telephone"
-                    type="tel" name="telephone"><input id="form-popup-submit" type="submit"></form>
+                    type="text" name="budget"><input id="popup-name" type="text" name="your-name"><input
+                    id="popup-telephone" type="tel" name="tel"><input id="form-popup-submit" type="submit"></form>
                 <div class="action-popup__content">
                   <div class="action-popup-media resize-text-container">
                     <div class="action-popup-media__text">hatchback</div>
@@ -220,9 +221,10 @@
                           <p class="action-popup__subtitle">Залиште заявку і наш експерт підбере для вас вигідне авто із
                             США</p>
                           <div class="action-popup-last"><input class="action-popup-last__input"
-                              id="action-popup-last__name" type="text" name="name" required placeholder="Ім'я"><input
-                              class="action-popup-last__input" id="action-popup-last__telephone" type="tel"
-                              name="telephone" required placeholder="+ 380 (00) 000 00 00"></div>
+                              id="action-popup-last__name" type="text" name="your-name" required
+                              placeholder="Ім'я"><input class="action-popup-last__input"
+                              id="action-popup-last__telephone" type="tel" name="tel" required
+                              placeholder="+ 380 (00) 000 00 00"></div>
                           <div class="action-popup-steps">
                             <div class="action-popup-steps__item active"></div>
                             <div class="action-popup-steps__item active"></div>
